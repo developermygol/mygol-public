@@ -1,0 +1,24 @@
+.Spinner {
+  margin: 80px auto;
+  border: 1px solid #f3f3f3;
+  border-left: 1px solid #e7a016 ;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+.spinnerIe {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 3em;
+  font-weight: 800;
+}

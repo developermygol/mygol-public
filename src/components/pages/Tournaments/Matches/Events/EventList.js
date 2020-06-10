@@ -1,0 +1,147 @@
+import React, { Component, Fragment } from 'react';
+import { withRouter } from 'react-router-dom';
+import { observer } from 'mobx-react';
+import Loc, { Localize } from '../../../../common/Locale/Loc';
+import { getUploadsImg, getPlayerLink } from '../../../../helpers/Utils';
+import { redirect } from '../../../../common/FormsMobx/Utils';
+import InfoBox from '../../../../common/InfoBox';
+import { findByIdInArray } from '../../../../helpers/Data';
+
+const defaultProps = {
+    match: null,
+    canAdd: true,
+    canEdit: true,
+    canDelete: true,
+
+    addMessage: '',
+    listData: null,
+
+    editHandler: null,
+    addHandler: null,
+    deleteHandler: null
+}
+
+@observer
+class EventList extends Component {
+
+    getTeam = (match, idTeam) => {
+        const team = match.idHomeTeam === idTeam ? match.homeTeam : match.visitorTeam;
+        return team;
+    }
+
+    getPlayer = (match, idTeam, idPlayer) => {
+        const players = match.idHomeTeam === idTeam ? match.homePlayers : match.visitorPlayers;
+        return findByIdInArray(players, idPlayer);
+    }
+
+    getTypeElement = (type) => {
+        return <span className={'EventType Type' + type}>{Localize('MatchEventType' + type)}</span>;
+    }
+
+
+    addButtonHandler = () => {
+        redirect(this, this.props.match.url + '/events/new');
+    }
+
+    getPlayerRender = (match, idTeam, idPlayer, first) => {
+        const player = this.getPlayer(match, idTeam, idPlayer);
+        const { idTournament } = this.props.match.params;
+
+        if (player)
+            if (player.userData)
+                if (first)
+                    return (
+                        <Fragment>
+                            <span className='ApparelNumber'>{player.matchData.apparelNumber}</span>
+                            <span>{getUploadsImg(player.userData.avatarImgUrl, player.userData.id, 'user', 'PlayerAvatar Mini')}</span>
+                            <span className='Name'>{getPlayerLink(idTournament, player.matchData.idTeam, player)}</span>
+                        </Fragment>
+                    )
+                else
+                    return (
+                        <Fragment>
+                            <span className='Name'>{getPlayerLink(idTournament, player.matchData.idTeam, player)}</span>
+                            <span>{getUploadsImg(player.userData.avatarImgUrl, player.userData.id, 'user', 'PlayerAvatar Mini')}</span>
+                            <span className='ApparelNumber'>{player.matchData.apparelNumber}</span>
+                        </Fragment>
+                    )
+            else
+                return <span className=''>{player.name + ' ' + player.surname}</span>
+    }
+
+    isVisibleEvent = (type) => {
+        switch (type) {
+            case 30: // Assist
+            case 100: // Record closed
+            case 1001:  // hidden: AddToPdrData1
+            case 1002:  // hidden: AddTournamentPoints
+                return false;
+            default: 
+                return true;
+        }
+    }
+
+
+
+    render() {
+        const match = this.props.listData;
+        if (!match) return
+
+        const events = match ? match.events : null;
+
+
+        return (
+            <Fragment>
+
+                {(!match || !match.events || match.events.length === 0) ?
+                    <Fragment>
+                        <InfoBox><Loc>Match.NoEvents</Loc></InfoBox>
+                    </Fragment>
+                    :
+                    <Fragment>
+                        <div className='MatchEventsTable'>
+                            {events.map(ev => {
+                                if (!this.isVisibleEvent(ev.type)) return null;
+
+                                const home = ev.idTeam === match.idHomeTeam;
+
+                                return (
+                                    <div key={ev.id} className='Entry'>
+                                        {ev.idTeam === 0 ?
+                                            <div className='Wide' colSpan={5}>
+                                                <div className='Time'>
+                                                        <span className='Minute'>{ev.matchMinute}'</span>
+                                                        {/* <span className='Hour'> {getFormattedTime(ev.timeStamp)}</span> */}
+                                                </div>
+                                                {this.getTypeElement(ev.type)}
+                                            </div>
+                                            :
+                                            <Fragment>
+                                                <div className='EntryBox Left Player'>{home ? this.getPlayerRender(match, ev.idTeam, ev.idPlayer, home) : null}</div>
+                                                <div className='EntryBox Left Type'>{home ? this.getTypeElement(ev.type) : null}</div>
+                                                <div className='EntryBox Central'>
+                                                    <div className='Time'>
+                                                        <span className='Minute'>{ev.matchMinute}'</span>
+                                                        {/* <span className='Hour'> {getFormattedTime(ev.timeStamp)}</span> */}
+                                                    </div>
+                                                </div>
+                                                <div className='EntryBox Right Type'>{home ? ' ' : this.getTypeElement(ev.type)}</div>
+                                                <div className='EntryBox Right Player'>{home ? ' ' : this.getPlayerRender(match, ev.idTeam, ev.idPlayer, home)}</div>
+                                            </Fragment>
+                                        }
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    </Fragment>
+                }
+
+            </Fragment>
+        )
+    }
+}
+
+EventList.defaultProps = defaultProps;
+
+
+export default withRouter(EventList);

@@ -1,0 +1,2283 @@
+body {
+  font-size: 14px;
+}
+
+body,
+html,
+div,
+p,
+h1,
+h2,
+h3,
+h4,
+ul,
+li,
+span,
+ul,
+li,
+img,
+th,
+td,
+tr,
+a {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  list-style-type: none;
+  box-sizing: border-box;
+}
+
+input,
+select,
+textarea {
+  box-sizing: border-box;
+}
+
+body,
+input,
+select,
+textarea,
+button {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #fff;
+  font-size: 14px;
+}
+
+body {
+  background-color: #505072;
+  background-image: url('public1/back2.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+a {
+  color: #e7a016;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+h2 {
+  font-weight: 800;
+  font-size: 5.5em;
+  color: #e7a016;
+  text-transform: uppercase;
+  line-height: 1em;
+  margin-bottom: 40px;
+}
+
+.Button {
+  background: none;
+  border: 2px solid #e7a016;
+  border-radius: 50px;
+  padding: 7px 20px;
+  color: #e7a016;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-right: 20px;
+  outline: 0;
+}
+
+.Button:hover {
+  border-color: #fbbd64;
+  color: #fbbd64;
+}
+
+.Button svg {
+  height: 1em;
+  margin-right: 5px;
+}
+
+.Button.Front {
+  display: inline-block;
+  background-color: #fa002c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  min-width: 180px;
+  margin-right: 0;
+}
+
+.DevWarning {
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: rgb(165, 0, 0);
+  padding: 7px 10px;
+  color: white;
+  border-top-left-radius: 10px;
+  font-size: 12px;
+}
+
+.Root {
+  padding: 10px 20px;
+}
+
+.NavBar {
+  display: none;
+}
+
+.MenuOpener {
+  margin-right: 10px;
+}
+
+.ArticleSummary.PerRow3 {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.TopBar .OrgData {
+  display: flex;
+  align-items: center;
+}
+
+.TopBar .Logo {
+  background-size: 70px;
+  background-repeat: no-repeat;
+  height: 70px;
+  width: 70px;
+  min-width: 70px;
+}
+
+.TopBar .OrgName {
+  margin-left: 10px;
+}
+
+.TopBar h1 {
+  font-weight: 800;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  color: #e7a016;
+  line-height: 1em;
+}
+
+.TopBar h2 {
+  font-size: 1em;
+  font-weight: 400;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.Actions {
+  display: flex;
+  align-items: center;
+}
+
+.Login {
+  margin-left: 30px;
+  align-self: center;
+  text-transform: uppercase;
+}
+
+footer .Wrapper {
+  margin: 0 20px;
+}
+
+.SponsorContainer.Side {
+  display: none;
+}
+
+/* __ 1 __________ */
+
+.SimpleTeam {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.SimpleTeam .TeamLogo {
+  width: auto;
+  height: auto;
+  max-width: 100px;
+  max-height: 100px;
+  margin: 0 5px;
+}
+
+.SimpleTeam .TeamName {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.TopBar {
+  z-index: 100;
+  width: 100%;
+  min-height: 100px;
+  max-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  top: 0;
+  background: linear-gradient(to top, rgba(93, 93, 129, 0.6), rgba(93, 93, 129, 1));
+}
+
+.NavBar li {
+  margin: 5px -15px;
+  padding: 8px 15px;
+}
+
+.NavBarLink {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  font-weight: 800;
+  color: #fff;
+}
+
+.NavBarLink.active {
+  color: #e7a016;
+}
+
+.BreadCrumb {
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  height: 60px;
+}
+
+.BreadCrumb .TournamentLogo {
+  width: 60px;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 50px;
+}
+
+.BreadCrumb h3 {
+  font-size: 2em;
+  font-weight: 800;
+  line-height: 1em;
+  color: #fff;
+}
+
+.BreadCrumbSeparator {
+  font-weight: 800;
+  font-size: 1.5em;
+  padding-top: 1em;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 10px;
+}
+
+.Title span {
+  font-size: 1em;
+  font-weight: 800;
+}
+
+.Title .Secondary {
+  color: white;
+}
+
+.DataTable {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.DataTableHeaderRow {
+  border-top: 2px solid #e7a016;
+  border-bottom: 1px solid #e7a016;
+  text-transform: uppercase;
+}
+
+.DataTableHeaderCell {
+  padding: 7px 20px 7px 0 !important;
+  text-align: left;
+  white-space: normal !important;
+}
+
+.DataTableHeaderCell .DataTableHeaderSpan {
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+.DataTableRow {
+  border-bottom: 1px solid #75758a;
+}
+
+.DataTableCell {
+  padding: 7px 20px 2px 0;
+  white-space: nowrap;
+}
+
+.DataTableCell .Logo {
+  width: 40px;
+}
+
+.DataTableCell .TeamLogo {
+  width: 20px;
+}
+
+.PlayerAvatar {
+  border-radius: 100px;
+  border: 2px solid #eee;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.PlayerAvatar.Mini {
+  min-height: 40px;
+  min-width: 40px;
+  max-width: 40px;
+  max-height: 40px;
+}
+
+.Sponsors {
+  left: 50%;
+  margin-left: -25%;
+  position: fixed;
+  bottom: 0;
+  padding-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.Sponsors h4 {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #e7a016;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 15px;
+  margin-right: 30px;
+  align-self: flex-start;
+}
+
+.Sponsors .Logo {
+  margin-right: 30px;
+}
+
+.Sponsors .Logo img {
+  max-width: 100px;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  filter: saturate(1) contrast(50%) grayscale(100%) invert(1) brightness(190%) opacity(80%);
+}
+
+.Section {
+  margin-bottom: 80px;
+}
+
+.Section h3 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.Section h4 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.Section .Content {
+  padding-left: 0;
+}
+
+.Content h3 {
+  font-weight: 800;
+  font-size: 1.8rem;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.Section .Content h4 {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #e7a016;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.LargeText {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.Chart {
+  width: 100%;
+  position: relative;
+}
+
+.ApparelNumber {
+  display: inline-block;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #e7a016;
+  border-radius: 999px;
+  padding: 2px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.Center {
+  text-align: center;
+}
+
+.Integer {
+  text-align: center;
+}
+
+.Skew {
+  text-align: left;
+  height: 140px;
+}
+
+.Skew .DataTableHeaderSpan {
+  display: block;
+  width: 30px;
+  transform: translate(8px, 45px) rotate(315deg);
+  white-space: nowrap;
+}
+
+.Bottom {
+  vertical-align: bottom;
+}
+
+.MatchesTable h3 {
+  background-color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.MatchesTable h4 {
+  padding-left: 0;
+  margin-bottom: 0;
+}
+
+.MatchesTable h5 {
+}
+
+.MatchesTable table {
+  padding: 10px 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.MatchesTable .TeamLogo {
+  width: 40px;
+}
+
+.MatchDetails h3 {
+  text-align: center;
+}
+
+.MatchDetails .InfoBox {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.MatchSchedule {
+  padding-right: 10px;
+}
+
+.MatchSchedule .Day {
+  margin-right: 10px;
+}
+
+.RestMatchContainer {
+  text-align: center;
+  padding: 10px 0 !important;
+}
+
+.MatchTeamDesc {
+  display: inline-block;
+  padding: 10px 0 !important;
+}
+
+.MatchTeamName.Home {
+  text-align: right;
+}
+
+.MatchScore {
+  text-align: center;
+  white-space: nowrap;
+}
+
+.MatchStatus .Scores {
+  margin-bottom: 10px;
+}
+
+.MatchStatus .Scores .Score {
+  width: 100px;
+  height: 100px;
+  font-size: 4.3rem;
+}
+
+.MatchTeamLogo {
+  text-align: center;
+}
+
+.MatchNoScore {
+  text-align: center;
+}
+
+.MatchesTable table {
+  border-spacing: 0;
+  width: 100%;
+}
+
+.MatchesTable td {
+  padding: 3px 10px;
+}
+
+.Score {
+  display: inline-block;
+  border-radius: 5px;
+  margin: 0 5px;
+  padding: 0;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-weight: 800;
+  font-size: 2rem;
+  width: 40px;
+  height: 40px;
+}
+
+.Title .Vs {
+  font-size: 0.8em;
+  color: rgba(255, 255, 255, 0.3);
+  line-height: 0.8em;
+}
+
+.MatchTeams {
+  display: flex;
+}
+
+.MatchTeams .Team {
+  text-align: center;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1 0;
+}
+
+.MatchTeams .TeamName {
+  font-weight: 800;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.MatchStatus {
+  flex: 1 1 0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.MatchStatus .Details {
+  margin-bottom: 10px;
+}
+
+.MatchStatus .Details .K {
+  display: block;
+  font-size: 0.8em;
+  color: #999;
+}
+
+.MatchStatus .Details .V {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.MatchStatus .Details .Day {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.LargeTeamInfo img {
+  max-width: 200px;
+  max-height: 200px;
+}
+
+.FillerText {
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.MatchRefers {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.MatchRefers .Horizontal {
+  display: flex;
+  justify-content: center;
+}
+
+.MatchRefers .Refer {
+  text-align: center;
+  margin: 0 10px 10px 10px;
+  flex: 1 1 0;
+}
+
+.MatchEvents {
+  margin-bottom: 20px;
+}
+
+.MatchMinutes {
+  max-width: 100%;
+}
+
+.MatchMinutes pre {
+  white-space: pre-wrap;
+  max-width: 100%;
+}
+
+.MatchPlayersTop {
+  margin-bottom: 20px;
+}
+
+.MatchPlayersContainer {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.MatchPlayers {
+  flex: 1 1 0;
+}
+
+.MatchPlayers img {
+  margin: 0 10px;
+}
+
+.MatchPlayers h4 {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.MatchPlayers .SanctionedPlayer {
+  padding-left: 8px;
+  font-size: 0.9rem;
+  color: red;
+}
+
+/* Match event */
+
+.MatchEventsTable {
+  width: 100%;
+}
+
+.MatchEvents button.Center {
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+.MatchEventsTable .Entry {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.MatchEventsTable .Entry:before {
+  content: '';
+  width: 3px;
+  background-color: aliceblue;
+  position: relative;
+  left: 50%;
+  z-index: -1;
+}
+
+.MatchEventsTable .Time {
+  margin-top: 10px;
+  border: 2px solid aliceblue;
+  border-radius: 100px;
+  background-color: #565370;
+  padding: 5px 12px;
+}
+
+.MatchEventsTable .Minute {
+  font-weight: 600;
+  font-size: 1.3em;
+}
+
+.MatchEventsTable .Hour {
+  font-size: 0.8em;
+}
+
+.MatchEventsTable .Left {
+}
+
+.MatchEventsTable .Right {
+  text-align: right;
+}
+
+.MatchEventsTable .Central {
+  text-align: center;
+  flex: 1 1 0;
+  margin: 0 20px;
+}
+
+.MatchEventsTable .Player {
+  flex: 1.7 1.7 0;
+}
+
+.MatchEventsTable .Type {
+  flex: 1 1 0;
+}
+
+.MatchEvents .Wide {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.MatchEvents .Wide .EventType {
+  display: block;
+}
+
+.MatchEvents .Wide .Time {
+  border: none;
+}
+
+.MatchEvents .RadioItems {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.MatchEvents .RadioItem {
+  margin-right: 20px;
+}
+
+.MatchEventsTable .EntryBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+}
+
+.MatchEventsTable .EntryBox.Right.Player {
+  justify-content: flex-end;
+}
+
+.MatchEventsTable .Entry .PlayerAvatar {
+  margin: 0 10px;
+}
+
+.MatchEventsTable .EventType {
+  display: inline-block;
+  font-weight: 600;
+  border-radius: 50px;
+  background-color: #565370;
+  padding: 3px 20px;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.EventType.Type1 {
+  background-color: orange;
+  color: white;
+}
+.EventType.Type10 {
+  background-color: orange;
+  color: white;
+}
+.EventType.Type11 {
+  background-color: orange;
+  color: white;
+}
+.EventType.Type12 {
+  background-color: orange;
+  color: white;
+}
+.EventType.Type13 {
+  background-color: orange;
+  color: white;
+}
+.EventType.Type15 {
+  background-color: orange;
+  color: white;
+}
+.EventType.Type16 {
+  background-color: orange;
+  color: white;
+}
+.EventType.Type17 {
+  background-color: orange;
+  color: white;
+}
+.EventType.Type18 {
+  background-color: orange;
+  color: white;
+}
+.EventType.Type31 {
+  background-color: yellowgreen;
+  color: white;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  border-radius: 50px;
+}
+.EventType.Type61 {
+  background-color: #ffd800;
+  color: #222;
+  border-radius: 2px;
+}
+.EventType.Type62 {
+  background-color: #fc3b0e;
+  color: white;
+  border-radius: 2px;
+}
+.EventType.Type63 {
+  background-color: #1e88e5;
+  color: white;
+  border-radius: 2px;
+}
+.EventType.Type64 {
+  background-color: #43a047;
+  color: white;
+  border-radius: 2px;
+}
+.EventType.Type65 {
+  background-color: #fb8c00;
+  color: white;
+  border-radius: 2px;
+}
+
+.PlayerEvent {
+  margin-bottom: 10px;
+}
+
+.PlayerEvent .Type {
+  padding: 0 10px;
+}
+
+.PlayerStat {
+  margin-left: 10px;
+  display: inline-block;
+  width: 16px;
+  height: 20px;
+}
+
+.PlayerStat.EventType {
+  background-color: none;
+}
+
+.PlayerStat.EventType.Type31 {
+  background: url('public1/icon-ball.png') no-repeat center;
+  background-size: 16px 16px;
+}
+.PlayerStat.EventType.Type61 {
+  background: url('public1/icon-yellowcard.png') no-repeat center;
+  background-size: 16px 16px;
+}
+.PlayerStat.EventType.Type62 {
+  background: url('public1/icon-redcard.png') no-repeat center;
+  background-size: 16px 16px;
+}
+.PlayerStat.EventType.Type63 {
+  background: url('public1/icon-bluecard.png') no-repeat center;
+  background-size: 16px 16px;
+}
+.PlayerStat.EventType.Type64 {
+  background: url('public1/icon-greencard.png') no-repeat center;
+  background-size: 16px 16px;
+}
+.PlayerStat.EventType.Type65 {
+  background: url('public1/icon-orangecard.png') no-repeat center;
+  background-size: 16px 16px;
+}
+
+.PlayerData {
+  margin-bottom: 20px;
+}
+
+.PlayerData .PlayerAvatar.Medium {
+  width: 120px;
+  border-width: 3px;
+}
+
+.PlayerAwards {
+  clear: both;
+}
+
+.AwardList {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-top: 20px;
+}
+
+.AwardTitle {
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.AwardDetail {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.AwardDate {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.Award {
+  width: 220px;
+  height: 140px;
+  padding-top: 80px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  text-align: centeR;
+}
+
+.Award_DreamTeam {
+  background-image: url('public1/awards/dreamteam.png');
+}
+
+.Award_MVP {
+  background-image: url('public1/awards/mvp.png');
+}
+
+.Award_MaxScorer {
+  background-image: url('public1/awards/maxscorer.png');
+}
+
+.PlayerStats {
+  clear: both;
+}
+
+.PlayerSocial .Name {
+  margin-bottom: 20px;
+}
+
+.PlayerSocial .PlayerName {
+  text-transform: uppercase;
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 0.8em;
+}
+
+.PlayerSocial .PlayerSurname {
+  text-transform: uppercase;
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 0.8em;
+  color: #e7a016;
+}
+
+.PlayerSocial .Motto {
+  font-size: 0.9em;
+  font-style: italic;
+  margin-bottom: 20px;
+  padding-right: 40px;
+}
+
+.PlayerSocial .Signature {
+  display: block;
+  height: 100px;
+}
+
+.PlayerSocial .Connect {
+  display: block;
+  margin-bottom: 20px;
+  color: white;
+  font-weight: 400;
+  font-size: 0.9em;
+}
+
+.PlayerSocial .Twitter {
+  padding-left: 32px;
+  background: url('public1/twitter.png') no-repeat;
+}
+
+.PlayerSocial .Facebook {
+  padding-left: 32px;
+  background: url('public1/facebook.png') no-repeat;
+}
+
+.PlayerSocial .Instagram {
+  padding-left: 32px;
+  background: url('public1/instagram.png') no-repeat;
+}
+
+.DetailsTable {
+  border-spacing: 0;
+}
+
+.DetailsTable td {
+  font-size: 0.9rem;
+  padding: 4px 40px 4px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.DetailsTable .Key {
+  font-weight: 600;
+}
+
+.PointsSummary {
+  margin-bottom: 20px;
+}
+
+.PointsChart {
+  margin-bottom: 20px;
+}
+
+.Content.Text ul {
+  margin-top: 5px;
+}
+
+.Content.Text li {
+  margin-left: 20px;
+  margin-bottom: 5px;
+  list-style-type: disc;
+}
+
+.TabBar {
+  display: flex;
+  padding: 0px 10px 5px 0px;
+  flex-wrap: wrap;
+}
+
+.TabItem {
+  padding: 0 25px 10px 0;
+  background: none;
+  border: none;
+  outline: 0;
+  color: #e7a016;
+  font-weight: 600;
+}
+
+.TabItem {
+  padding: 6px 2px 5px 2px;
+  margin-right: 8px;
+}
+
+.TabItem.Active {
+  color: white;
+  font-weight: 600;
+}
+
+.TabContent {
+  padding: 0px 0;
+}
+
+.ActionLink {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.Knockout {
+  display: flex;
+  width: 100%;
+  align-content: space-around;
+  overflow: auto;
+}
+
+.KnockoutStage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-width: 150px;
+}
+
+.KnockoutMatch {
+  border: 1px solid #e7a016;
+  padding: 3px 5px 3px 10px;
+  margin: 5px 20px 5px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.KnockoutTeam {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2px 0;
+}
+
+.KnockoutTeam .TeamLogo {
+  margin-right: 5px;
+  max-height: 40px;
+  max-width: 40px;
+}
+
+.KnockoutTeam .TeamName {
+  margin: 0 10px;
+}
+
+.KnockoutTeam .Score {
+  margin-left: 5px;
+}
+
+.KnockoutTeam .MatchTeamDescription {
+  min-height: 40px;
+}
+
+.ArticleSection {
+  margin-bottom: 40px;
+}
+
+.ArticleSection .MoreContents {
+  text-align: center;
+}
+
+.ArticleSectionWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.ArticleSummary {
+  border: 2px solid #e7a016;
+  flex: 1 1 100%;
+  margin: 0 0px 15px 0;
+  height: 280px;
+  position: relative;
+  background-color: #3e3c52;
+  background-repeat: none;
+  background-size: cover;
+  background-position: center top;
+}
+
+.ArticleSummary.PerRow1 {
+  width: 100%;
+  height: 400px;
+}
+
+.ArticleSummary img {
+  max-width: 100%;
+}
+
+.ArticleSummary.WithVideo .Summary {
+  position: initial;
+}
+
+.ArticleSummary .Summary {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.ArticleSummary .SummaryTitle a {
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1em;
+  margin-bottom: 5px;
+}
+
+.PerRow1 .SummaryTitle a {
+  color: white;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.ArticleSummary .SummarySubtitle {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.ArticleSummary .SummarySubtitle a {
+  font-weight: 400;
+  color: white;
+}
+
+.ArticleSummary.WithVideo {
+  height: auto;
+}
+
+.VideoContainer {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+.VideoContainer .Video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+footer {
+  height: 400px;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 1)
+  );
+  margin-top: 50px;
+  margin-bottom: -10px;
+}
+
+footer .Wrapper {
+  padding-top: 180px;
+}
+
+footer .Basic {
+  margin-bottom: 20px;
+}
+
+footer .OrgName {
+  color: #e7a016;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+footer .OrgMotto {
+  text-transform: uppercase;
+}
+
+footer .Data {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+footer .OrgAddress {
+  flex: 1 1 0;
+}
+footer .Social {
+  flex: 1 1 0;
+}
+footer .Logo {
+  flex: 1 1 0;
+}
+
+footer .OrgAddress p {
+  font-size: 0.9rem;
+}
+
+footer .Logo {
+  max-width: 120px;
+  max-height: 120px;
+  width: auto;
+  height: auto;
+  filter: saturate(1) contrast(50%) grayscale(100%) invert(1) brightness(160%) opacity(100%);
+}
+
+footer .Copy {
+  margin-top: 10px;
+  text-align: center;
+}
+
+footer .MyGol {
+}
+
+footer .Devel {
+  font-size: 0.8em;
+  color: #bbb;
+}
+
+footer .Copy a {
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+footer .Website {
+  margin-top: 20px;
+}
+
+.Social.Bar a {
+  text-indent: -9999px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: no-repeat center;
+}
+
+.Social.Bar a.Facebook {
+  background-image: url('public1/facebook.png');
+}
+.Social.Bar a.Twitter {
+  background-image: url('public1/twitter.png');
+}
+.Social.Bar a.Instagram {
+  background-image: url('public1/instagram.png');
+}
+.Social.Bar a.Youtube {
+  background-image: url('public1/youtube.png');
+}
+
+.ContentArticle .MainMedia img {
+  width: 100%;
+  border: 2px solid #e7a016;
+  margin-top: 10px;
+}
+
+.ContentArticle .MainMedia .VideoContainer {
+  border: 2px solid #e7a016;
+}
+
+.ContentArticle h1 {
+  font-size: 4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 1em;
+  margin: 20px 0 40px 0;
+}
+
+.ContentArticle h2 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-transform: unset;
+  line-height: 1.2em;
+  margin: 0px 0 40px 0;
+}
+
+.RawContent h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: white;
+  margin: 30px 0 10px 0;
+}
+
+.RawContent h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: white;
+  margin: 20px 0 10px 0;
+}
+
+.RawContent h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: white;
+  margin: 10px 0 10px 0;
+}
+
+.RawContent p {
+  color: white;
+  margin: 10px 0 0px 0;
+  line-height: 1.6em;
+}
+
+.Grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.GridItem {
+  padding-right: 10px;
+  margin-bottom: 10px;
+}
+
+.Grid2 .GridItem {
+  width: 50%;
+}
+.Grid3 .GridItem {
+  width: 33%;
+}
+.Grid4 .GridItem {
+  width: 25%;
+}
+.Grid5 .GridItem {
+  width: 20%;
+}
+.Grid6 .GridItem {
+  width: 16%;
+}
+.Grid7 .GridItem {
+  width: 14%;
+}
+
+.TeamsItem {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.TeamsItem img {
+  margin-right: 10px;
+  max-width: 40px;
+}
+
+.TacticM .Content {
+  display: flex;
+}
+
+.TacticDetails {
+  flex: 2;
+}
+
+.TacticContainer {
+  width: 100%;
+}
+
+.TacticField {
+  margin: 0 auto;
+  width: 658px;
+  height: 460px;
+  background-repeat: no-repeat;
+  position: relative;
+
+  perspective: 35em;
+  perspective-origin: top;
+}
+
+.TacticPositions {
+  height: 100%;
+  width: 100%;
+
+  transform: rotateX(45deg) scale(0.8, 1.05) translate(0, -80px);
+  perspective: 50em;
+  perspective-origin: center;
+}
+
+.TacticPlayer {
+  width: 100px;
+  height: 100px;
+  background-color: #fa002c;
+  border-radius: 100px;
+  transform: rotateX(-45deg) scaleY(1.179);
+  box-shadow: 0px 40px 60px rgba(0, 0, 0, 0.2);
+}
+
+.TacticName {
+  margin: 10px 0;
+  text-align: center;
+}
+
+.ApparelDetails {
+  width: 100%;
+}
+
+.ApparelDetails svg {
+  flex: 1;
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+}
+
+.PlayerDetailedStats {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.PlayerSummaryStats {
+  width: 40%;
+}
+
+.PlayerDayStats {
+  width: 30%;
+}
+
+.PlayerDayStats h4 {
+  font-size: 1.2em;
+  font-weight: 800;
+  color: #e7a016;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.SponsorContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.SponsorImg {
+  display: block;
+  margin: 0 auto;
+
+  max-width: 100%;
+}
+
+.Form {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.Form .Error {
+  margin: 30px 0;
+  font-weight: 600;
+  color: red;
+}
+
+.Form .Intro {
+  margin-bottom: 20px;
+}
+
+.FormField {
+}
+
+.FormButton {
+  background-color: #e7a016;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  min-width: 200px;
+  font-weight: 600;
+}
+
+.FormField label {
+  display: block;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.FormInput {
+  color: white;
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid #e7a016;
+  padding: 10px;
+}
+
+.FormInput:focus {
+  outline: none;
+  color: white;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.FormSent .Main {
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.FormSent .Second {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+}
+
+.TeamImg {
+  width: 100%;
+  max-height: 400px;
+  margin-bottom: 30px;
+  border: 2px solid #e7a016;
+  overflow: hidden;
+  background-color: #3e3c52;
+}
+
+.TeamImg img {
+  width: 100%;
+  display: block;
+}
+
+/* __ 2 __________ */
+
+.Home .Tournaments {
+  display: none;
+}
+
+@media (max-width: 599px) {
+  body {
+    background-image: none;
+  }
+  .TopBar {
+    background: transparent;
+  }
+
+  .Root {
+    /* border-top: 2px solid green; */
+    padding: 0 10px;
+  }
+
+  .SummaryTitle a {
+    font-size: 1.2em;
+  }
+
+  .Home .Tournaments {
+    display: block;
+    margin-bottom: 20px;
+    border: 2px solid #e7a016;
+    padding: 15px;
+    background: url(public1/titles/tournament.png) no-repeat left bottom;
+    background-color: rgba(255, 255, 255, 0.2);
+    background-position: -40% 0;
+    padding-left: 60px;
+  }
+  .Home .Tournaments a {
+    color: white;
+    font-size: 1.4em;
+    font-weight: 900;
+    text-transform: uppercase;
+  }
+
+  .Actions .Social.Bar {
+    display: none;
+  }
+  .OrgName h2 {
+    display: none;
+  }
+  footer .Logo {
+    display: none;
+  }
+  footer .Data {
+    display: block;
+  }
+  footer .Wrapper {
+    padding-top: 100px;
+    text-align: center;
+  }
+
+  .PerRow1 .SummaryTitle a {
+    font-size: 1.2em;
+  }
+  .PerRow3 .SummaryTitle a {
+    font-size: 1.2em;
+  }
+  .ArticleSection {
+    margin-bottom: 20px;
+  }
+
+  .NavBar.Show {
+    display: block;
+  }
+  .NavBar {
+    margin-bottom: 20px;
+    margin: 0 -20px 20px -20px;
+  }
+
+  .NavBar li {
+    background-color: white;
+    margin: 0;
+    padding: 15px;
+  }
+  .NavBarLink {
+    color: #3e3c52;
+  }
+
+  .Section {
+    margin-bottom: 20px;
+  }
+  .Section h3 {
+    font-size: 2rem;
+    line-height: 1em;
+  }
+  .Section .Content {
+    overflow-x: auto;
+  }
+
+  h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  .DataTable {
+    margin-bottom: 20px;
+  }
+  .DataTableCell .Logo {
+    width: 24px;
+  }
+
+  .Expend {
+    display: none;
+  }
+
+  .BreadCrumb h3 {
+    font-size: 1.2rem;
+  }
+  .BreadCrumb .Tournament {
+    margin-left: 10px;
+  }
+
+  .ContentArticle h1 {
+    font-size: 1.5rem;
+  }
+  .ContentArticle h2 {
+    font-size: 1.2rem;
+  }
+  .ContentArticle .RawContent {
+    margin-bottom: 20px;
+  }
+  .ContentArticle img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .SkewM {
+    text-align: left;
+    height: 140px;
+  }
+
+  .SkewM .DataTableHeaderSpan {
+    display: block;
+    width: 30px;
+    transform: translate(8px, 45px) rotate(315deg);
+    white-space: nowrap;
+  }
+
+  .DataTableCell,
+  .DataTableCell a {
+    font-size: 12px;
+  }
+
+  .MatchesTable td {
+    padding: 5px 3px;
+  }
+  .MatchesTable .TeamLogo {
+    width: 20px;
+  }
+  .MatchesTable .Score {
+    margin: 0 3px;
+    font-size: 1.2rem;
+    width: auto;
+    height: auto;
+    background: none;
+  }
+  .MatchesTable {
+    font-size: 10px;
+  }
+  .MatchSchedule {
+    text-align: center;
+  }
+
+  .TabItem {
+    padding-right: 5px;
+  }
+
+  .PlayerSocial .Social {
+    display: flex;
+    justify-content: space-around;
+  }
+  .Connect {
+    display: inline-block;
+    text-transform: translateX(-9000px);
+  }
+
+  .SimpleTeam .TeamLogo {
+    margin-left: 10px;
+  }
+
+  .TacticM {
+    display: block;
+  }
+  .TacticDetails {
+    display: none;
+  }
+  .ApparelDetails {
+    width: 100%;
+  }
+  .ApparelDetails svg {
+    margin: 0 auto;
+  }
+
+  .Award {
+    min-width: 130px;
+  }
+
+  .PlayerSummaryStats {
+    width: 50%;
+  }
+  .PlayerDayStats {
+    width: 50%;
+  }
+
+  .StatsDetailField .Value {
+    display: inline-block;
+    width: 1.3em;
+    color: #e7a016;
+    font-size: 1.2rem;
+    font-weight: 800;
+    text-align: right;
+    margin: 0 7px 0px 0;
+    line-height: 1.2em;
+  }
+
+  .MatchTeams .Team {
+    width: 28%;
+  }
+  .MatchTeams .TeamName {
+    font-size: 1.2rem;
+  }
+  .MatchTeams .TeamLogo {
+    width: 100%;
+  }
+
+  .MatchStatus .Details .Day {
+    font-size: 1.1rem;
+  }
+  .MatchStatus .Details .V {
+    font-size: 1rem;
+  }
+  .MatchStatus .Scores {
+    white-space: nowrap;
+  }
+  .MatchStatus .Scores .Score {
+    font-size: 2rem;
+    padding: 3px;
+    width: 40px;
+    height: 40px;
+    line-height: 1em;
+  }
+
+  .MatchPlayers .ApparelNumber {
+    display: none;
+  }
+  .MatchEvents .ApparelNumber {
+    display: none;
+  }
+
+  .Knockout {
+    font-size: 11px;
+  }
+  .KnockoutStage {
+    min-width: 210px;
+  }
+  .KnockoutMatch {
+    width: 200px;
+  }
+  .Knockout .TeamName {
+    overflow: hidden;
+    text-align: center;
+  }
+  .Knockout .Score {
+    font-size: 1.2rem;
+    width: auto;
+    height: auto;
+    padding: 1px 7px;
+  }
+}
+
+@media (min-width: 600px) {
+  .Root {
+    /* border-top: 2px solid blue; */
+  }
+
+  .MenuOpener {
+    display: none;
+  }
+
+  .NavBar {
+    display: block;
+  }
+
+  .NavBar ul {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .NavBarLink {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .NavBarLogin {
+    float: right;
+  }
+  .NavBarLogin a {
+    color: #e7a016;
+  }
+
+  .ContentFrame {
+    min-height: 500px;
+    margin-bottom: 100px;
+  }
+
+  .PlayerData {
+    width: 48%;
+    float: left;
+  }
+
+  .PlayerSocial {
+    float: right;
+    width: 48%;
+    margin-top: 50px;
+  }
+
+  .PlayerSocial .Social {
+    margin: 100px 0 0 20px;
+  }
+
+  .StatsDetailField {
+    white-space: nowrap;
+  }
+
+  .StatsDetailField .Value {
+    display: inline-block;
+    width: 2em;
+    color: #e7a016;
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: right;
+    margin: 0 7px 0px 0;
+    line-height: 1.2em;
+  }
+
+  .StatsDetailField .Total {
+    color: #e7a016;
+    font-size: 1rem;
+    font-weight: 800;
+  }
+
+  .StatsDetailField .Caption {
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 899px) {
+  .SkewT {
+    text-align: left;
+    height: 140px;
+  }
+
+  .SkewT .DataTableHeaderSpan {
+    display: block;
+    width: 30px;
+    transform: translate(8px, 45px) rotate(315deg);
+    white-space: nowrap;
+  }
+
+  .DataTableCell {
+    padding-right: 5px;
+  }
+  .DataTableHeaderCell {
+    padding-right: 5px !important;
+  }
+
+  .TitleOne .TeamLogo {
+    width: 40%;
+  }
+
+  .Login {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .Root {
+    /* border-top: 2px solid orange; */
+  }
+
+  .Content {
+    flex: 1;
+  }
+
+  .TopBar {
+    position: fixed;
+  }
+
+  .NavBar {
+    margin: 80px 0 20px 0;
+  }
+
+  .NavBarLogin {
+    display: none;
+  }
+
+  .ContentFrame {
+    display: flex;
+  }
+
+  .SponsorContainer.Side {
+    display: block;
+    margin: 0px 0 0 20px;
+  }
+
+  .SponsorBanner {
+    margin-bottom: 20px;
+  }
+
+  .Title {
+    height: 178px;
+    margin-bottom: 40px;
+    padding-top: 54px;
+  }
+
+  .Title .Main {
+    display: block;
+    padding-left: 70px;
+    line-height: 0.8em;
+  }
+
+  .Title .Secondary {
+    display: block;
+    padding-left: 30px;
+    line-height: 0.8em;
+  }
+
+  .Title.Tournament {
+    background: url('public1/titles/tournament.png') no-repeat left bottom;
+  }
+  .Title.Match {
+    background: url('public1/titles/tournament.png') no-repeat left bottom;
+  }
+
+  .TitleOne {
+    display: flex;
+    margin: 50px 0;
+    align-items: flex-end;
+  }
+
+  .TitleOne h2::first-line {
+    color: #e7a016;
+    display: inline-block;
+  }
+
+  .TitleOne h2 {
+    color: #fff;
+    line-height: 0.8em;
+    margin-bottom: 0;
+  }
+
+  .TitleOne .TeamLogo {
+    border: 2px solid #e7a016;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 120px;
+    max-height: 120px;
+    margin-right: 20px;
+  }
+
+  .ArticleSummary.PerRow3 {
+    max-width: 49%;
+    min-width: 49%;
+  }
+}
+
+@media (max-width: 1199px) {
+  .PlayerSocial .Name {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  .Root {
+    /* border-top: 2px solid cyan; */
+    margin: 0 auto;
+    width: 1200px;
+  }
+
+  .TopBar {
+    width: 1200px !important;
+  }
+
+  .Login {
+    display: block;
+    margin-right: 10px;
+  }
+
+  footer .Wrapper {
+    margin: 0 auto;
+    width: 1200px;
+  }
+
+  .WideContainer {
+    width: 100%;
+    display: flex;
+  }
+
+  .Chart {
+    width: 50%;
+  }
+
+  .PlayerData {
+    margin-top: 40px;
+    float: left;
+    width: 400px;
+  }
+
+  .PlayerData.WithBackground {
+    margin-top: 280px;
+  }
+
+  .PlayerSocial {
+    float: right;
+    width: 500px;
+  }
+
+  .PlayerSocial.WithBackground {
+    margin-top: 50px;
+  }
+
+  .PlayerSocial .Social {
+    padding-left: 100px;
+  }
+
+  .PointsChart {
+    width: 100%;
+    background: url('public1/soccerfield3d.png') no-repeat bottom;
+  }
+
+  .PointsChart .Chart {
+    margin: 0 auto;
+    width: 700px;
+    height: 189px;
+  }
+
+  .PointsSummary {
+    width: 400px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .PointsSummary .Points {
+    font-size: 10rem;
+    font-weight: 800;
+    color: #e7a016;
+    line-height: 0.8em;
+  }
+
+  .PointsSummary .Units {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #e7a016;
+    line-height: 0.8em;
+    text-transform: uppercase;
+  }
+
+  .PointsSummary .Caption {
+    display: block;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+
+  .ArticleSummary.PerRow3 {
+    max-width: 32.33%;
+    min-width: 32.33%;
+    margin: 1% 0.5%;
+  }
+}
+
+@media (min-width: 1800px) {
+}
+
+@media print {
+  .Root {
+    border-top: none;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  .TopBar {
+    display: none;
+  }
+  .NavBar {
+    display: none;
+  }
+  .SponsorContainer {
+    display: none;
+  }
+  .TacticM {
+    display: none;
+  }
+  .OrgData .Logo {
+    display: none;
+  }
+  .Section.Rankings {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+
+  a {
+    color: #000;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  li,
+  td,
+  th,
+  ul {
+    color: #333;
+  }
+
+  .DataTable {
+    width: 100%;
+  }
+  .TitleOne.Team img {
+    width: 100px;
+  }
+
+  .Section {
+    page-break-after: always;
+  }
+  .PlayerList .ApparelNumber {
+    display: block;
+    border: none;
+    color: #333;
+  }
+}
+
+.Section .Content .Horizontal {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+}
+
+.SubDetail {
+  margin-bottom: 30px;
+}
+
+.SubDetail .Header {
+  font-weight: 600;
+}
+
+.SubDetail .Date {
+  margin-left: 30px;
+}
+
+.SubDetail .Text {
+  white-space: pre-wrap;
+  font-size: 0.8rem;
+  color: #ddd;
+}
+
+.SubDetail .AllegTitle {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  /* color: #e7a016; */
+  color: white;
+}
+
+.Details.Horizontal {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.Details .Field {
+  margin: 0 50px 20px 0;
+  min-width: 150px;
+}
+
+.Details .Field .Header {
+  font-weight: 600;
+  margin-bottom: 3px;
+}
+
+.SanctionMatchDone {
+  border-radius: 50px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #98d800;
+  margin-right: 10px;
+}
+
+.SanctionMatchPending {
+  border-radius: 50px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #fc3b0e;
+  margin-right: 10px;
+}
