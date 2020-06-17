@@ -21,7 +21,7 @@ export default withRouter(
           {player.dayResultSummary ? (
             <Fragment>
               {repeatContent(
-                <span className="PlayerStat EventType Type31" />,
+                <span className="PlayerStat EventType Type31" />, //Gol
                 player.dayResultSummary.points
               )}
               {repeatContent(

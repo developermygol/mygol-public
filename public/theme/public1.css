@@ -672,19 +672,21 @@ footer .Wrapper {
 .MatchEventsTable .Entry {
   display: flex;
   flex-wrap: nowrap;
+  justify-content: center;
 }
 
 .MatchEventsTable .Entry:before {
-  content: '';
+  /* content: '';
   width: 3px;
   background-color: aliceblue;
   position: relative;
   left: 50%;
-  z-index: -1;
+  z-index: -1; */
 }
 
 .MatchEventsTable .Time {
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   border: 2px solid aliceblue;
   border-radius: 100px;
   background-color: #565370;
@@ -709,22 +711,24 @@ footer .Wrapper {
 
 .MatchEventsTable .Central {
   text-align: center;
-  flex: 1 1 0;
+  /*flex: 1 1 0;*/
   margin: 0 20px;
 }
 
 .MatchEventsTable .Player {
-  flex: 1.7 1.7 0;
+  /*flex: 1.7 1.7 0;*/
 }
 
 .MatchEventsTable .Type {
-  flex: 1 1 0;
+  /*flex: 1 1 0;*/
+  flex-basis: 135px;
 }
 
 .MatchEvents .Wide {
   display: block;
   margin: 0 auto;
   text-align: center;
+  margin: 7px 0;
 }
 
 .MatchEvents .Wide .EventType {
@@ -748,8 +752,26 @@ footer .Wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 10px;
+  margin: 0 5px;
 }
+
+/*🚧🚧🚧*/
+
+.MatchEventsTable .Group-Right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 40%;
+}
+
+.MatchEventsTable .Group-Left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 40%;
+}
+
+/*🚧🚧🚧*/
 
 .MatchEventsTable .EntryBox.Right.Player {
   justify-content: flex-end;
@@ -764,7 +786,7 @@ footer .Wrapper {
   font-weight: 600;
   border-radius: 50px;
   background-color: #565370;
-  padding: 3px 20px;
+  padding: 3px 10px;
   text-align: center;
   font-size: 0.9em;
 }
@@ -857,8 +879,16 @@ footer .Wrapper {
   background-color: none;
 }
 
+.PlayerStat.EventType.Type30 {
+  background: url('public1/icon-assist2.png') no-repeat center;
+  background-size: 16px 16px;
+}
 .PlayerStat.EventType.Type31 {
   background: url('public1/icon-ball.png') no-repeat center;
+  background-size: 16px 16px;
+}
+.PlayerStat.EventType.Type50 {
+  background: url('public1/icon-injury.png') no-repeat center;
   background-size: 16px 16px;
 }
 .PlayerStat.EventType.Type61 {
