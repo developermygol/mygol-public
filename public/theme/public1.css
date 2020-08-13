@@ -67,6 +67,11 @@ h2 {
   margin-bottom: 40px;
 }
 
+.Color1 {
+  color: #e7a016 !important;
+  border-color: #e7a016 !important;
+}
+
 .Button {
   background: none;
   border: 2px solid #e7a016;
@@ -721,7 +726,7 @@ footer .Wrapper {
 
 .MatchEventsTable .Type {
   /*flex: 1 1 0;*/
-  flex-basis: 135px;
+  flex-basis: 75px;
 }
 
 .MatchEvents .Wide {
@@ -808,7 +813,7 @@ footer .Wrapper {
   color: white;
 }
 .EventType.Type13 {
-  background-color: orange;
+  background-color: #1e88e5;
   color: white;
 }
 .EventType.Type15 {

@@ -18,7 +18,7 @@ class MatchPlayers extends Component {
 
     return (
       <div className="MatchPlayersTop">
-        <h3>
+        <h3 className="Color1">
           <Loc>Players</Loc>
         </h3>
         <div className="MatchPlayersContainer">

@@ -8,7 +8,8 @@ export default props => {
   const { awards } = player;
   const hasAwards = awards && awards.length > 0;
   const relevantAwards = awards.filter(
-    award => award.idTeam === parseInt(currentIdTeam) && award.idTournament === parseInt(currentIdTournament)
+    award =>
+      award.idTeam === parseInt(currentIdTeam, 10) && award.idTournament === parseInt(currentIdTournament, 10)
   );
 
   if (!hasAwards && relevantAwards.length === 0) return null;

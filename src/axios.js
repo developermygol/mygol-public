@@ -1,10 +1,10 @@
-import axios from "axios";
-import { getBaseUrl } from "./components/helpers/Utils";
+import axios from 'axios';
+import { getBaseUrl } from './components/helpers/Utils';
 
-console.log(process.env);
+// console.log(process.env);
 
 const apiInstance = axios.create({
-  baseURL: getBaseUrl(process.env.REACT_APP_BACKEND_HOST + "/api"),
+  baseURL: getBaseUrl(process.env.REACT_APP_BACKEND_HOST + '/api'),
 });
 
 export const rootApiServer = axios.create({

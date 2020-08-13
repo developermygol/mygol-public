@@ -201,11 +201,13 @@ export default {
     "PlayerInvitationSentOk": "Invitación enviada",
 
     "Points": "Goles",
+    "PointsAgainst": "Puntos en Contra",
     "Point": "Gol",
     "Points.ThisSeason": "Marcados esta temporada",
     "Ranking": "Ranking",
     "Rankings": "Rankings",
     "ScorersRanking": "Ranking goleadores",
+    "GoalkeepersRanking": "Ranking porteros",
 
     // Search 
     "Search.NoPlayerResults": "No se ha encontrado ningún jugador.",

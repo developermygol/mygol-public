@@ -177,11 +177,13 @@
     "Invite.For": "Convidar a ",
     "PlayerInvitationSentOk": "Invitació enviada",
     "Points": "Gols",
+    "PointsAgainst": "Punts en contra",
     "Point": "Gol",
     "Points.ThisSeason": "Marcats aquesta temporada",
     "Ranking": "Rànquing",
     "Rankings": "Rànquings",
     "ScorersRanking": "Rànquing golejadors",
+    "GoalkeepersRanking": "Rànquing porters",
 
     // Search 
     "Search.NoPlayerResults": "No s'ha trobat cap jugador.",
