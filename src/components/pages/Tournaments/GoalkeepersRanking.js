@@ -7,7 +7,10 @@ import axios from '../../../axios';
 import DataTable from '../../common/DataTable';
 import Spinner from '../../common/Spinner/Spinner';
 import { Localize } from '../../common/Locale/Loc';
-import { rankHandler } from '../../common/FormsMobx/ListRenderHandlers';
+import {
+  rankHandler,
+  goalsConceadedDividedByGamesPlayedHandler,
+} from '../../common/FormsMobx/ListRenderHandlers';
 import { groupBy } from '../../helpers/Data';
 import TabControl from '../../common/TabControl';
 
@@ -119,7 +122,7 @@ class GoalKeepersTable extends Component {
       <DataTable
         columns={[
           {
-            id: 'c0',
+            id: 'g0',
             label: Localize('Ranking'),
             fieldValue: 'tournamentRank',
             handler: rankHandler,
@@ -127,14 +130,29 @@ class GoalKeepersTable extends Component {
             headerClassName: 'Center SkewM',
           },
           {
-            id: 'c5',
-            label: Localize('PointsAgainst'),
+            id: 'g3',
+            label: Localize('GamesPlayed.little'),
+            fieldValue: 'gamesPlayed',
+            className: 'Integer',
+            headerClassName: 'Center SkewM',
+          },
+          {
+            id: 'g4',
+            label: Localize('PointsAgainstDevidedByGamesPlayes'),
+            fieldValue: 'gamesPlayed',
+            handler: goalsConceadedDividedByGamesPlayedHandler,
+            className: 'Integer',
+            headerClassName: 'Center SkewM',
+          },
+          {
+            id: 'g5',
+            label: Localize('PointsAgainst.little'),
             fieldValue: 'pointsAgainst',
             className: 'Integer',
             headerClassName: 'Center SkewM',
           },
           {
-            id: 'c6',
+            id: 'g6',
             label: Localize('Player'),
             handler: r =>
               getPlayerLink(idTournament, r.idTeam, {
@@ -145,7 +163,7 @@ class GoalKeepersTable extends Component {
             headerClassName: 'SkewM',
           },
           {
-            id: 'c7',
+            id: 'g7',
             label: Localize('Team'),
             handler: r => this.getTeam(r, idTournament, normalTeams),
             headerClassName: 'SkewM',

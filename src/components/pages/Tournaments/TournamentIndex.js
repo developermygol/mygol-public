@@ -9,6 +9,8 @@ import { Link, withRouter } from 'react-router-dom';
 import TournamentSanctionsSummary from './Sanctions/TournamentSanctionsSummary';
 import { inject, observer } from 'mobx-react';
 import GoalkeepersRanking from './GoalkeepersRanking';
+import AssistancesRanking from './AssistancesRanking';
+import MVPsRanking from './MVPsRanking';
 
 @inject('store')
 @observer
@@ -60,6 +62,24 @@ class CompetitionHome extends Component {
             </h3>
             <div className="Content">
               <GoalkeepersRanking />
+            </div>
+          </div>
+
+          <div className="Section">
+            <h3>
+              <Loc>AssistancesRanking</Loc>
+            </h3>
+            <div className="Content">
+              <AssistancesRanking />
+            </div>
+          </div>
+
+          <div className="Section">
+            <h3>
+              <Loc>MVPsRanking</Loc>
+            </h3>
+            <div className="Content">
+              <MVPsRanking />
             </div>
           </div>
 

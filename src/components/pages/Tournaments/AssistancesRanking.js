@@ -13,16 +13,16 @@ import TabControl from '../../common/TabControl';
 
 @inject('store')
 @observer
-class ScorersRanking extends Component {
+class AssistancesRanking extends Component {
   @observable rankingType = 1;
   @observable data = null;
   @observable loading = true;
   @observable error = null;
 
   items = [
-    { id: 1, name: Localize('Tournament') },
-    { id: 2, name: Localize('ByStage') },
-    { id: 3, name: Localize('ByGroup') },
+    { id: 1, name: Localize('Tournament') }, // Competicion
+    { id: 2, name: Localize('ByStage') }, // Fase
+    { id: 3, name: Localize('ByGroup') }, // Grupo
   ];
 
   componentDidMount = () => {
@@ -32,7 +32,7 @@ class ScorersRanking extends Component {
   setVisibleRanking = type => {
     const p = this.props;
     const { idTournament } = p.match.params;
-    requestAsync(this, axios.get, null, '/tournaments/' + idTournament + '/ranking/scorers/' + type).then(
+    requestAsync(this, axios.get, null, '/tournaments/' + idTournament + '/ranking/assistances/' + type).then(
       action(res => {
         this.rankingType = type;
         switch (type) {
@@ -57,7 +57,7 @@ class ScorersRanking extends Component {
 
     switch (this.rankingType) {
       case 1:
-        return <ScorersTable idTournament={idTournament} normalTeams={normalTeams} data={this.data} />;
+        return <AssistancesTable idTournament={idTournament} normalTeams={normalTeams} data={this.data} />;
 
       case 2:
       case 3:
@@ -67,7 +67,11 @@ class ScorersRanking extends Component {
               return (
                 <div className="">
                   <h4>{target.name}</h4>
-                  <ScorersTable idTournament={idTournament} normalTeams={normalTeams} data={target.grouped} />
+                  <AssistancesTable
+                    idTournament={idTournament}
+                    normalTeams={normalTeams}
+                    data={target.grouped}
+                  />
                 </div>
               );
             })}
@@ -94,10 +98,9 @@ class ScorersRanking extends Component {
   }
 }
 
-export default withRouter(ScorersRanking);
+export default withRouter(AssistancesRanking);
 
-// 💥 DUPLICATE REFACTOR
-class ScorersTable extends Component {
+class AssistancesTable extends Component {
   getTeam = (team, idTournament, normalTeams) => {
     var nTeam = normalTeams[team.idTeam];
 
@@ -111,12 +114,11 @@ class ScorersTable extends Component {
 
   render() {
     const { idTournament, data, normalTeams } = this.props;
-
     return (
       <DataTable
         columns={[
           {
-            id: 'c0',
+            id: 'a0',
             label: Localize('Ranking'),
             fieldValue: 'tournamentRank',
             handler: rankHandler,
@@ -124,21 +126,21 @@ class ScorersTable extends Component {
             headerClassName: 'Center SkewM',
           },
           {
-            id: 'c3',
+            id: 'a4',
             label: Localize('GamesPlayed.little'),
             fieldValue: 'gamesPlayed',
             className: 'Integer',
             headerClassName: 'Center SkewM',
           },
           {
-            id: 'c5',
-            label: Localize('Points'),
-            fieldValue: 'points',
+            id: 'a5',
+            label: Localize('Assistances'),
+            fieldValue: 'assistances',
             className: 'Integer',
             headerClassName: 'Center SkewM',
           },
           {
-            id: 'c6',
+            id: 'a6',
             label: Localize('Player'),
             handler: r =>
               getPlayerLink(idTournament, r.idTeam, {
@@ -149,7 +151,7 @@ class ScorersTable extends Component {
             headerClassName: 'SkewM',
           },
           {
-            id: 'c7',
+            id: 'a7',
             label: Localize('Team'),
             handler: r => this.getTeam(r, idTournament, normalTeams),
             headerClassName: 'SkewM',

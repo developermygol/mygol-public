@@ -107,12 +107,16 @@ export default {
     "Rank": "Posición",
     "TournamentPoints": "Puntos", 
     "PointsAgainst": 'Goles encajados',
+    "PointsAgainst.little": 'G.E',
+    "PointsAgainstDevidedByGamesPlayes": 'GE/PJ',
     "PointsInOwn": 'Goles en propia',
     "PointsDiff": "Dif. goles",
+    "Assistances": "Asistencias",
     "CardsType1": "Tarjetas amarillas",
     "CardsType2": "Tarjetas rojas",
     "Data1": "Tarjetas amarillas acumuladas",
     "GamesPlayed": "Partidos jugados",
+    "GamesPlayed.little": "P.J.",
     "GamesWon": "Partidos ganados",
     "GamesLost": "Partidos perdidos",
     "GamesDraw": "Partidos empatados",
@@ -201,13 +205,15 @@ export default {
     "PlayerInvitationSentOk": "Invitación enviada",
 
     "Points": "Goles",
-    "PointsAgainst": "Puntos en Contra",
     "Point": "Gol",
     "Points.ThisSeason": "Marcados esta temporada",
     "Ranking": "Ranking",
     "Rankings": "Rankings",
     "ScorersRanking": "Ranking goleadores",
     "GoalkeepersRanking": "Ranking porteros",
+    "AssistancesRanking": "Ranking asistencias",
+    "MVPsRanking": "Ranking MVPs",
+    
 
     // Search 
     "Search.NoPlayerResults": "No se ha encontrado ningún jugador.",
