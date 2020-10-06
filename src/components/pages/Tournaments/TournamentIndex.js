@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import Classification from './Classification';
 import Spinner from '../../common/Spinner/Spinner';
-import ScorersRanking from './ScorersRanking';
 import Calendar from './Calendar/Calendar';
 import SponsorBanner from '../../common/SponsorBanner';
 import Loc from '../../common/Locale/Loc';
 import { Link, withRouter } from 'react-router-dom';
 import TournamentSanctionsSummary from './Sanctions/TournamentSanctionsSummary';
 import { inject, observer } from 'mobx-react';
-import GoalkeepersRanking from './GoalkeepersRanking';
-import AssistancesRanking from './AssistancesRanking';
-import MVPsRanking from './MVPsRanking';
+// import ScorersRanking from './Rankings/ScorersRanking';
+// import GoalkeepersRanking from './Rankings/GoalkeepersRanking';
+// import AssistancesRanking from './AssistancesRanking';
+// import MVPsRanking from './Rankings/MVPsRanking';
+import Rankings from './Rankings/Rankings';
 
 @inject('store')
 @observer
@@ -49,39 +50,19 @@ class CompetitionHome extends Component {
 
           <div className="Section">
             <h3>
+              <Loc>Rankings</Loc>
+            </h3>
+            <Rankings tournament={t} history={this.props.history} />
+          </div>
+
+          {/* <div className="Section">
+            <h3>
               <Loc>ScorersRanking</Loc>
             </h3>
             <div className="Content">
               <ScorersRanking />
             </div>
-          </div>
-
-          <div className="Section">
-            <h3>
-              <Loc>GoalkeepersRanking</Loc>
-            </h3>
-            <div className="Content">
-              <GoalkeepersRanking />
-            </div>
-          </div>
-
-          <div className="Section">
-            <h3>
-              <Loc>AssistancesRanking</Loc>
-            </h3>
-            <div className="Content">
-              <AssistancesRanking />
-            </div>
-          </div>
-
-          <div className="Section">
-            <h3>
-              <Loc>MVPsRanking</Loc>
-            </h3>
-            <div className="Content">
-              <MVPsRanking />
-            </div>
-          </div>
+          </div> */}
 
           {}
 

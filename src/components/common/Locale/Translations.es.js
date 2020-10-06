@@ -210,9 +210,10 @@ export default {
     "Ranking": "Ranking",
     "Rankings": "Rankings",
     "ScorersRanking": "Ranking goleadores",
-    "GoalkeepersRanking": "Ranking porteros",
+    "GoalKeepersRanking": "Ranking porteros",
     "AssistancesRanking": "Ranking asistencias",
-    "MVPsRanking": "Ranking MVPs",
+    "MvpsRanking": "Ranking MVPs",
+    "View full rankings": "Ver rankings completos",
     
 
     // Search 

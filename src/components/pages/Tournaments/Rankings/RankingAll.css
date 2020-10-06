@@ -1,0 +1,51 @@
+.RankingAll .TabItem {
+  color: white;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.RankingAll .TabItem:hover {
+  color: #e7a016;
+}
+
+.RankingAll .TabItem.Active {
+  color: #e7a016;
+}
+
+.RankingAll .LargeRankingCell {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.RankingAll .LargeRankingCell .Award {
+  height: inherit;
+  max-height: 150px;
+}
+
+.RankingAll .LargeRankingCell .Award span {
+  font-size: 1rem;
+}
+
+.RankingAll .LargeRankingCell .Avatar {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.RankingAll .LargeRankingCell .Avatar .UserLink {
+  margin-top: 0.25rem;
+}
+
+.RankingAll .LargeRankingCell .Team span {
+  align-items: center;
+  display: flex;
+  font-size: 1rem;
+}
+
+.RankingAll .LargeRankingCell .Team img {
+  max-height: 150px;
+}
+
+.RankingAll .DataTable .DataTableRow:first-child {
+  display: none;
+}

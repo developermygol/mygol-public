@@ -1,0 +1,22 @@
+.Rankings .ActionLink {
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.Rankings .ActionLink:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.Rankings .TabItem {
+  color: white;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.Rankings .TabItem:hover {
+  color: #e7a016;
+}
+
+.Rankings .TabItem.Active {
+  color: #e7a016;
+}

@@ -322,6 +322,13 @@ footer .Wrapper {
   max-height: 40px;
 }
 
+.PlayerAvatar.Medium {
+  min-height: 180px;
+  min-width: 180px;
+  max-width: 180px;
+  max-height: 180px;
+}
+
 .Sponsors {
   left: 50%;
   margin-left: -25%;
@@ -971,6 +978,18 @@ footer .Wrapper {
 
 .Award_MaxScorer {
   background-image: url('public1/awards/maxscorer.png');
+}
+
+.Award_MaxGoalKeeper {
+  background-image: url('public1/awards/GoalKeeper.png');
+}
+
+.Award_MaxAssistances {
+  background-image: url('public1/awards/assistances.png');
+}
+
+.Award_MaxMVPs {
+  background-image: url('public1/awards/dreamteampoints.png');
 }
 
 .PlayerStats {

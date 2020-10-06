@@ -9,12 +9,13 @@ import mobxUiStore from './store-mobx/UiStore';
 import ScrollToTop from './components/common/ScrollToTop';
 
 class App extends Component {
-
   state = {
     //themeCssFile: '/theme/public1.' + process.env.REACT_APP_COMMIT + '.css'
-    themeCssFile: (process.env.NODE_ENV === 'production' ? '/theme/public1.' + process.env.REACT_APP_COMMIT + '.css' : '/theme/public1.css')
-  }
-
+    themeCssFile:
+      process.env.NODE_ENV === 'production'
+        ? '/theme/public1.' + process.env.REACT_APP_COMMIT + '.css'
+        : '/theme/public1.css',
+  };
 
   render() {
     return (

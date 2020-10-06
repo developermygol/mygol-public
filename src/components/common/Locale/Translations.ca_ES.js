@@ -186,9 +186,10 @@
     "Ranking": "Rànquing",
     "Rankings": "Rànquings",
     "ScorersRanking": "Rànquing golejadors",
-    "GoalkeepersRanking": "Rànquing porters",
+    "GoalKeepersRanking": "Rànquing porters",
     "AssistancesRanking": "Rànquing asistències",
-    "MVPsRanking": "Rànquing MVPs",
+    "MvpsRanking": "Rànquing MVPs",
+    "View full rankings": "Ver rankings completos",
 
     // Search 
     "Search.NoPlayerResults": "No s'ha trobat cap jugador.",

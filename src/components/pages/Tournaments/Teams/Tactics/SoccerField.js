@@ -22,7 +22,10 @@ export default class SoccerField extends Component {
           }}
         >
           {player ? (
-            <img src={getUploadsIcon(player.userData && player.userData.avatarImgUrl, player.id, 'user')} />
+            <img
+              src={getUploadsIcon(player.userData && player.userData.avatarImgUrl, player.id, 'user')}
+              alt="user-icon"
+            />
           ) : null}
         </div>
       );
