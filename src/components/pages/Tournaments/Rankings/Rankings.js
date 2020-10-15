@@ -15,6 +15,7 @@ const Rankings = ({ tournament, history }) => {
   const isKeeprs = active === 'keepers';
   const isAssists = active === 'assists';
   const isMVPs = active === 'mvps';
+  const rankingLimit = 5;
 
   const handleActiveChange = event => setActive(event.target.name);
 
@@ -38,10 +39,10 @@ const Rankings = ({ tournament, history }) => {
         </button>
       </ul>
       <div className="TabContent">
-        {isScorers && <ScorersRanking />}
-        {isKeeprs && <GoalkeepersRanking />}
-        {isAssists && <AssistancesRanking />}
-        {isMVPs && <MVPsRanking />}
+        {isScorers && <ScorersRanking limit={rankingLimit} />}
+        {isKeeprs && <GoalkeepersRanking limit={rankingLimit} />}
+        {isAssists && <AssistancesRanking limit={rankingLimit} />}
+        {isMVPs && <MVPsRanking limit={rankingLimit} />}
       </div>
     </div>
   );

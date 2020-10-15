@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import Loc from "../../../common/Locale/Loc";
-import { Link } from "react-router-dom";
-import { observer, inject } from "mobx-react";
-import MatchView from "./MatchView";
+import React, { Component } from 'react';
+import Loc from '../../../common/Locale/Loc';
+import { Link } from 'react-router-dom';
+import { observer, inject } from 'mobx-react';
+import MatchView from './MatchView';
 
-const isFillerMatch = (match) => {
+const isFillerMatch = match => {
   return match.idHomeTeam === -1 || match.idVisitorTeam === -1;
 };
 
-@inject("store")
+@inject('store')
 @observer
 class FlatDayView extends Component {
   render() {
@@ -20,7 +20,7 @@ class FlatDayView extends Component {
 
     const tId = this.props.idTournament;
 
-    return day.matches.map((match) => {
+    return day.matches.map(match => {
       if (!match) return null;
 
       const home = normalTeams[match.idHomeTeam];
@@ -34,23 +34,14 @@ class FlatDayView extends Component {
             <td colSpan={7} className="RestMatchContainer">
               {match.idHomeTeam === -1 ? (
                 visitor ? (
-                  <Link to={"/tournaments/" + tId + "/teams/" + visitor.id}>
-                    {" "}
-                    {visitor.name}
-                  </Link>
+                  <Link to={'/tournaments/' + tId + '/teams/' + visitor.id}> {visitor.name}</Link>
                 ) : (
-                  <span className="MatchTeamDesc">
-                    {match.visitorTeamDescription}
-                  </span>
+                  <span className="MatchTeamDesc">{match.visitorTeamDescription}</span>
                 )
               ) : home ? (
-                <Link to={"/tournaments/" + tId + "/teams/" + home.id}>
-                  {home.name}
-                </Link>
+                <Link to={'/tournaments/' + tId + '/teams/' + home.id}>{home.name}</Link>
               ) : (
-                <span className="MatchTeamDesc">
-                  {match.homeTeamDescription}
-                </span>
+                <span className="MatchTeamDesc">{match.homeTeamDescription}</span>
               )}
               <Loc>Rests</Loc>
             </td>
@@ -60,15 +51,7 @@ class FlatDayView extends Component {
 
       // Regular match
 
-      return (
-        <MatchView
-          key={match.id}
-          tId={tId}
-          match={match}
-          home={home}
-          visitor={visitor}
-        />
-      );
+      return <MatchView key={match.id} tId={tId} match={match} home={home} visitor={visitor} />;
     });
   }
 }
