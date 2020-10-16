@@ -36,8 +36,9 @@ class EventList extends Component {
   getTypeElement = (type, minute) => {
     const imageEventsTypes = [30, 31, 50, 61, 62, 63, 64, 65]; // TODO: 🚧 Search for all
     const hasImageEventType = imageEventsTypes.find(el => el === type);
+    const isMatchStarted = type === 1;
 
-    if (minute !== undefined)
+    if (minute !== undefined || isMatchStarted)
       return (
         <span className={'EventType Type' + type}>{`${Localize('MatchEventType' + type)} (${minute}')`}</span>
       );
@@ -113,10 +114,11 @@ class EventList extends Component {
                 if (!this.isVisibleEvent(ev.type)) return null;
 
                 const home = ev.idTeam === match.idHomeTeam;
+                const isMatchStart = ev.type === 1;
 
                 return (
                   <div key={ev.id} className="Entry">
-                    {ev.idTeam === 0 ? (
+                    {ev.idTeam === 0 || isMatchStart ? (
                       <div className="Wide" colSpan={5}>
                         {/* <div className="Time"> */}
                         {/* <span className="Minute">{ev.matchMinute}'</span> */}
