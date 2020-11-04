@@ -58,7 +58,9 @@ class GoalkeepersRanking extends Component {
             break;
         }
 
+        if (!this.data[0]) return null;
         const noIdPlayer = this.data[0].idPlayer === 0;
+
         if (noIdPlayer)
           this.props.store.players.actions.get('/user/' + this.data[0].idUser).then(
             action(res => {
