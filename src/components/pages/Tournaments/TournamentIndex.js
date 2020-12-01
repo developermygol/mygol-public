@@ -1,23 +1,53 @@
 import React, { Component } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import { inject, observer } from 'mobx-react';
+import { connect } from 'react-redux';
+
 import Classification from './Classification';
 import Spinner from '../../common/Spinner/Spinner';
 import Calendar from './Calendar/Calendar';
-import SponsorBanner from '../../common/SponsorBanner';
+// import SponsorBanner from '../../common/SponsorBanner';
+import SharedSponsorBanners from '../../shared/SponsorBanners';
 import Loc from '../../common/Locale/Loc';
-import { Link, withRouter } from 'react-router-dom';
 import TournamentSanctionsSummary from './Sanctions/TournamentSanctionsSummary';
-import { inject, observer } from 'mobx-react';
-// import ScorersRanking from './Rankings/ScorersRanking';
-// import GoalkeepersRanking from './Rankings/GoalkeepersRanking';
-// import AssistancesRanking from './AssistancesRanking';
-// import MVPsRanking from './Rankings/MVPsRanking';
 import Rankings from './Rankings/Rankings';
+import { retriveSponsorsDataByPosition } from '../../helpers/Sponsors';
+import { setActiveTournament } from '../../../actions/tournaments';
+import { startLoadingSponsorsByIdTournament } from '../../../actions/sponsors';
 
 @inject('store')
 @observer
 class CompetitionHome extends Component {
+  state = {
+    loaded: false,
+  };
+
+  componentDidMount = () => {
+    if (this.props.tournaments.activeTournament) this.setState({ loaded: true });
+  };
+
+  componentDidUpdate = async (prevProps, prevState) => {
+    if (!prevProps.tournaments.activeTournament) {
+      const tournamentId = parseInt(this.props.match.params.idTournament, 10);
+      await this.props.onStartLoadingSponsorsByIdTournament(tournamentId);
+      await this.props.onSetActiveTournamnet(
+        this.props.tournaments.tournaments.find(t => t.id === tournamentId)
+      );
+      this.setState({ loaded: true });
+    }
+  };
+
   render() {
     const t = this.props.store.tournaments.current;
+
+    if (this.state.loaded !== true) return null;
+
+    const middleBanner = retriveSponsorsDataByPosition(
+      this.props.sponsors,
+      this.props.organizations.activeOrganization.sponsorData,
+      this.props.tournaments.activeTournament.sponsorData,
+      2
+    );
 
     return (
       <div className="SectionContainer">
@@ -32,7 +62,13 @@ class CompetitionHome extends Component {
             </div>
           </div>
 
-          <SponsorBanner className="Secondary" position={2} organization />
+          {/* <SponsorBanner className="Secondary" position={2} organization /> */}
+          <SharedSponsorBanners
+            isOrganization={middleBanner.isOrganization}
+            isTournament={middleBanner.isTournament}
+            sponsors={middleBanner.sponsors}
+            config={middleBanner.config}
+          />
 
           <div className="Section">
             <h3>
@@ -55,15 +91,6 @@ class CompetitionHome extends Component {
             <Rankings tournament={t} history={this.props.history} />
           </div>
 
-          {/* <div className="Section">
-            <h3>
-              <Loc>ScorersRanking</Loc>
-            </h3>
-            <div className="Content">
-              <ScorersRanking />
-            </div>
-          </div> */}
-
           {}
 
           <div className="Section">
@@ -80,4 +107,15 @@ class CompetitionHome extends Component {
   }
 }
 
-export default withRouter(CompetitionHome);
+const mapStateToProps = state => ({
+  organizations: state.organizations,
+  tournaments: state.tournaments,
+  sponsors: state.sponsors,
+});
+
+const mapDispatchToProps = dispatch => ({
+  onSetActiveTournamnet: tournament => dispatch(setActiveTournament(tournament)),
+  onStartLoadingSponsorsByIdTournament: id => dispatch(startLoadingSponsorsByIdTournament(id)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CompetitionHome));

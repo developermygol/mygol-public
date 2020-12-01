@@ -10,6 +10,9 @@ import TournamentIndex from './TournamentIndex';
 import Teams from './Teams/Teams';
 import TournamentSanctions from './Sanctions/TournamentSanctions';
 import RankingAll from './Rankings/RankingAll';
+import { connect } from 'react-redux';
+import { startLoadingSponsorsByIdTournament } from '../../../actions/sponsors';
+import { setActiveTournament } from '../../../actions/tournaments';
 //import Calendar from './Calendar/Calendar';
 //import Sanctions from './Sanctions/Sanctions';
 
@@ -20,6 +23,13 @@ class Details extends Component {
     // Set the current tournament
     const id = this.props.match.params.idTournament;
     this.props.store.tournaments.setCurrent(id);
+
+    if (this.props.tournaments.tournaments.length > 0) {
+      this.props.onStartLoadingSponsorsByIdTournament(id);
+      this.props.onSetActiveTournamnet(
+        this.props.tournaments.tournaments.find(t => t.id === parseInt(id, 10))
+      );
+    }
   };
 
   render() {
@@ -54,4 +64,13 @@ class Details extends Component {
   }
 }
 
-export default withRouter(Details);
+const mapStateToProps = state => ({
+  tournaments: state.tournaments,
+});
+
+const mapDispatchToProps = dispatch => ({
+  onSetActiveTournamnet: tournament => dispatch(setActiveTournament(tournament)),
+  onStartLoadingSponsorsByIdTournament: id => dispatch(startLoadingSponsorsByIdTournament(id)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Details));

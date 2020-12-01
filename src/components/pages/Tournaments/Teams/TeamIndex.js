@@ -16,99 +16,110 @@ import TeamPicture from './TeamPicture';
 import Apparel from './Apparel/Apparel';
 import TeamSanctions from '../Sanctions/TeamSanctions';
 
-
-@inject('store') @observer
+@inject('store')
+@observer
 class TeamIndex extends Component {
+  @observable team = null;
+  @observable loading = true;
 
-    @observable team = null;
-    @observable loading = true;
+  componentDidMount() {
+    const { idTeam, idTournament } = this.props.match.params;
 
-    componentDidMount() {
-        const { idTeam, idTournament } = this.props.match.params;
+    requestAsync(this, axios.get, null, '/teams/' + idTeam + '/details/' + idTournament).then(res => {
+      this.team = res;
+      this.props.store.sponsors.forTeam = res.sponsors;
+    });
+  }
 
-        requestAsync(this, axios.get, null, '/teams/' + idTeam + '/details/' + idTournament)
-            .then(res => {
-                this.team = res;
-                this.props.store.sponsors.forTeam = res.sponsors;
-            });
-    }
+  getResult = (array, fieldName) => {
+    return array.map(d => {
+      const tdr = d.teamDayResults;
+      if (!tdr || tdr.length === 0) return null;
+      return tdr[0][fieldName];
+    });
+  };
 
-    getResult = (array, fieldName) => {
-        return array.map(d => {
-            const tdr = d.teamDayResults;
-            if (!tdr || tdr.length === 0) return null;
-            return tdr[0][fieldName];
-        });
-    }
+  render() {
+    const team = this.team;
 
-    render() {
-        const team = this.team;
+    return (
+      <Spinner loading={this.loading}>
+        {team ? (
+          <div className="SectionContainer">
+            <TitleOneLineComponent
+              title={team.name}
+              image={getUploadsImg(team.logoImgUrl, team.id, 'team', 'TeamLogo')}
+              className="Team"
+            />
 
-        return (
-            <Spinner loading={this.loading} >
-                { team ?
-                <div className='SectionContainer'>
+            <div className="Section">
+              <h3>
+                <Loc>Players</Loc>
+              </h3>
+              <TeamPicture image={team.teamImgUrl} />
+              <div className="Content">
+                <TeamPlayers data={team.players} />
+              </div>
+            </div>
 
-                    <TitleOneLineComponent title={team.name} image={getUploadsImg(team.logoImgUrl, team.id, 'team', 'TeamLogo')} className='Team' />
+            <SponsorBanner className="Secondary" position={2} team />
 
-                    <div className='Section'>
-                        <h3><Loc>Players</Loc></h3>
-                        <TeamPicture image={team.teamImgUrl} />
-                        <div className='Content'>
-                            <TeamPlayers data={team.players} />
-                        </div>
-                    </div>
+            <TeamPicture image={team.teamImgUrl2} />
 
-                    <SponsorBanner className='Secondary' position={2} team />
+            <div className="Section TacticM">
+              <div className="Content">
+                <DetailedTacticViewer value={team.idTactic} players={team.players} />
+                {team.apparelConfig ? <Apparel data={team.apparelConfig} /> : null}
+              </div>
+            </div>
 
-                    <TeamPicture image={team.teamImgUrl2} />
+            <div className="Section Rankings">
+              <h3>
+                <Loc>Rankings</Loc>
+              </h3>
+              <div className="Content">
+                <div className="WideContainer">
+                  <TeamGoalsChart data={this.getResult(team.days, 'points')} numDays={team.days.length} />
+                  <TeamRankingChart
+                    data={this.getResult(team.days, 'ranking1')}
+                    numDays={team.days.length}
+                    numTeams={team.days.length + 1}
+                  />
+                </div>
+              </div>
+            </div>
 
-                    <div className='Section TacticM'>
-                        <div className='Content'>
-                            <DetailedTacticViewer value={team.idTactic} players={team.players} />
-                            { team.apparelConfig ? <Apparel data={team.apparelConfig} /> : null }
-                        </div>
-                    </div>
+            <TeamPicture image={team.teamImgUrl3} />
 
-                    <div className='Section Rankings'>
-                        <h3><Loc>Rankings</Loc></h3>
-                        <div className='Content'>
-                            <div className='WideContainer'>
-                                <TeamGoalsChart data={this.getResult(team.days, 'points')} numDays={team.days.length} />
-                                <TeamRankingChart data={this.getResult(team.days, 'ranking1')} numDays={team.days.length} numTeams={team.days.length + 1} />
-                            </div>
-                        </div>
-                    </div>
-
-                    <TeamPicture image={team.teamImgUrl3} />
-
-                    {/* <div className='Section'>
+            {/* <div className='Section'>
                         <h3><Loc>Awards</Loc></h3>
                         <div className='Content'>
                             <p>List of team awards (not players, only team awards here. But probably related.</p>
                         </div>
                     </div> */}
 
-                    <div className='Section'>
-                        <h3><Loc>Matches</Loc></h3>
-                        <div className='Content'>
-                            <TeamCalendar data={team.days} idTournament={this.props.match.params.idTournament} />
-                        </div>
-                    </div>
+            <div className="Section">
+              <h3>
+                <Loc>Matches</Loc>
+              </h3>
+              <div className="Content">
+                <TeamCalendar data={team.days} idTournament={this.props.match.params.idTournament} />
+              </div>
+            </div>
 
-
-                    <div className='Section'>
-                        <h3><Loc>Sanctions.Team.All</Loc></h3>
-                        <div className='Content'>
-                            <TeamSanctions />
-                        </div>
-                    </div>
-
-                </div>
-                : null }
-            </Spinner>
-        )
-    }
+            <div className="Section">
+              <h3>
+                <Loc>Sanctions.Team.All</Loc>
+              </h3>
+              <div className="Content">
+                <TeamSanctions />
+              </div>
+            </div>
+          </div>
+        ) : null}
+      </Spinner>
+    );
+  }
 }
 
 export default TeamIndex;

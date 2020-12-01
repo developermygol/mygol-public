@@ -5,8 +5,13 @@ import { Provider as ProviderMobx } from 'mobx-react';
 import Root from './components/common/Root';
 
 import mobxStore from './store-mobx/Store';
+
 import mobxUiStore from './store-mobx/UiStore';
 import ScrollToTop from './components/common/ScrollToTop';
+
+// slick-carousel
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 class App extends Component {
   state = {
@@ -29,6 +34,7 @@ class App extends Component {
             </ScrollToTop>
           </BrowserRouter>
         </Fragment>
+        {/* </Provider> */}
       </ProviderMobx>
     );
   }
