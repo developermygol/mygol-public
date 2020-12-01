@@ -12,8 +12,8 @@ import Loc from '../../common/Locale/Loc';
 import TournamentSanctionsSummary from './Sanctions/TournamentSanctionsSummary';
 import Rankings from './Rankings/Rankings';
 import { retriveSponsorsDataByPosition } from '../../helpers/Sponsors';
-import { setActiveTournament } from '../../../actions/tournaments';
-import { startLoadingSponsorsByIdTournament } from '../../../actions/sponsors';
+import { setActiveTournament } from '../../../store/actions/tournaments';
+import { startLoadingSponsorsByIdTournament } from '../../../store/actions/sponsors';
 
 @inject('store')
 @observer

@@ -10,9 +10,9 @@ import Footer from './Footer';
 import SharedSponsorBanners from '../shared/SponsorBanners';
 import { retriveSponsorsDataByPosition } from '../helpers/Sponsors';
 
-import { startLoadOrganization } from '../../actions/organizations';
-import { startLoadTournaments } from '../../actions/tournaments';
-import { startLoadingSponsorsByIdOrganization } from '../../actions/sponsors';
+import { startLoadOrganization } from '../../store/actions/organizations';
+import { startLoadTournaments } from '../../store/actions/tournaments';
+import { startLoadingSponsorsByIdOrganization } from '../../store/actions/sponsors';
 
 @inject('store')
 @observer

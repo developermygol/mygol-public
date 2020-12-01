@@ -11,8 +11,8 @@ import Teams from './Teams/Teams';
 import TournamentSanctions from './Sanctions/TournamentSanctions';
 import RankingAll from './Rankings/RankingAll';
 import { connect } from 'react-redux';
-import { startLoadingSponsorsByIdTournament } from '../../../actions/sponsors';
-import { setActiveTournament } from '../../../actions/tournaments';
+import { startLoadingSponsorsByIdTournament } from '../../../store/actions/sponsors';
+import { setActiveTournament } from '../../../store/actions/tournaments';
 //import Calendar from './Calendar/Calendar';
 //import Sanctions from './Sanctions/Sanctions';
 
