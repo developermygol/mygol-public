@@ -39,6 +39,14 @@ export default {
     "Configuration": "Configuración",
     "Matches": "Partidos",
 
+    // Footer
+    "Privacy policy": "Política de privacidad y condiciones de servicio",
+    "Privacy policy title": "Política de privacidad",
+    "General terms title": "Condiciones generales del servicio",
+    "MyGol fullname": "MyGol Plataforma de Gestión Deportiva",
+    "Developed by": "Developed by",
+    "for": "for",
+
     // Classification
     "Teams.NoData": "No hay equipos en la competición", 
     "Classification.NoStages": "Aún no se han definido fases en esta competición",
@@ -577,4 +585,201 @@ export default {
     "Error.NotEmpty": "No se puede borrar ya que no está vacio",
     "Error.Generic": "No se ha podido completar la operación",
     "Error.404": "La URL no existe en el servidor",
+
+    // Data protection
+    "Terms.NoOrgData": "Organization is not set up completely, so no terms and conditions can be displayed yet.",
+    "DataProtectionGeneral": `
+1. Who is responsible for the processing of your data?
+{0} with CIF {1}.
+{2}
+
+2. For what purpose do we treat your personal data?
+In {0} we treat the information provided by interested persons in order to meet your request for registration, manage and publish information about sporting events in which you participate as well as show you commercial communications. Automated decisions will not be made based on data provided
+
+3. How long will we keep your data?
+The data will be kept as long as the interested party does not request its deletion, and where appropriate, during the years necessary to comply with legal obligations.
+
+4. What is the legitimacy for the processing of your data?
+We indicate the legal basis for the processing of your data:
+  • Execution of a contract: Respond to your application for registration, manage and publish information about sporting events in which you participate
+  • Legitimate interest of the Responsible: Send commercial communications about our products and services
+  • Consent of the interested party
+
+5. To which recipients will your data be communicated?
+The data will be communicated to the following recipients:
+    Your data will be processed by the computer maintenance company and the hosting company
+Data transfers to third countries
+    No data transfers to third countries are planned.
+
+6. What are your rights when you provide us with your information?
+Anyone has the right to obtain confirmation about whether or not we are processing personal data concerning {0}.
+Interested persons have the right to access their personal data, as well as to request the rectification of inaccurate data or, where appropriate, request its deletion when, among other reasons, the data is no longer necessary for the purposes that were collected. You also have the right to the portability of your data.
+In certain circumstances, the interested parties may request the limitation of the processing of their data, in which case we will only keep them for the exercise or defense of claims.
+In certain circumstances and for reasons related to their particular situation, the interested parties may object to the processing of their data. In this case, {0} will stop processing the data, except for compelling legitimate reasons, or the exercise or defense of possible claims.
+When sending commercial communications using the legitimate interest of the responsible party as a legal basis, the interested party may object to the processing of their data for that purpose.
+If you have given your consent for any specific purpose, you have the right to withdraw the consent granted at any time, without affecting the legality of the treatment based on the consent prior to your withdrawal.
+In case you feel your rights are violated regarding the protection of your personal data, especially when you have not obtained satisfaction in the exercise of your rights, you can file a claim with the competent Data Protection Control Authority through from his website: www.agpd.es.
+
+7. How have we obtained your data?
+The personal data we process in {0} come from: The interested party.
+The categories of data that are processed are:
+  • Identification data: Name, date of birth, place of birth, ID or NIE
+  • Postal and electronic addresses.
+  • User sports information: minutes played, goals, cards, etc.
+    `,
+    "DataProtectionLSSI": `
+0. OBJECT
+These General Conditions regulate the acquisition of the services offered in the Mygol computer application, which is owned by EMPRESA SL (hereinafter, {3}).
+Enrollment in {3} implies full and unreserved acceptance of each and every one of the General Conditions indicated, without prejudice to the acceptance of the Particular Conditions that may be applicable in certain registrations.
+These General Conditions may be modified without prior notification, therefore, it is advisable to read their content carefully before proceeding to the registration in the mobile application of {3}
+    
+1. IDENTIFICATION
+    {0}, in compliance with Law 34/2002, of July 11, on Services of the Information Society and Electronic Commerce, informs you that:
+  • Its corporate name is: {0}
+  • Your business name is: {3}.
+  • Your CIF is: {1}.
+  • Its registered office is at:
+{2}
+    
+2. COMMUNICATIONS
+For any communication with {3} write to {4}
+
+3. REGISTRATION
+{3} reserves the right to decide, at any time, the registration or not in {3} of a possible user. Enrollment in {3} involves the contracting of accident or injury insurance among the modalities offered by {3}
+{3} may, at any time, add new products and / or services to those currently offered, including offers and advertising communications. Likewise ({3}) reserves the right to withdraw or stop offering such services, at any time, and without prior notice.
+Enrollment in {3} can only be done by registering in one team of one of the competitions that {3} collects. The team delegate will collect the USER data that will be passed to the {3} organization. {3} will invite the USER to download the application and start the registration process through an initial password, which will identify and personally enable you to complete the registration.
+Once the registration has begun, the USER must follow all the instructions indicated in the process, which will imply the reading and acceptance of all the general and particular conditions as well as the privacy policy and the right to use the images, which are set in the {3} computer application.
+
+4. PURCHASE AND / OR CONTRACT PROCESS
+To register in {3}, the user must be of legal age.
+In addition, it will be necessary for the client to register on the platform through a data collection form in which {3} the information necessary for contracting is provided; data that in any case will be true, accurate and complete about your identity and that the customer must expressly consent by accepting the privacy policy of {3}.
+The steps to follow to make the purchase are:
+1. Fill in the registration details.
+2. Selection of the services to acquire.
+3. Payment of services.
+It is also recommended that the customer keep a copy in durable support of the conditions of sale when placing his order, as well as the receipt receipt sent by {3} by email.
+BILLING
+To receive the invoice, the user must request it in {4} providing their tax information.
+    
+5. DURATION, RENEWAL AND CANCELLATION OF THE CONTRACT
+DURATION
+The Client will have a maximum period of 14 calendar days from the inscription, to communicate his total or partial withdrawal of the purchase of the Product or service, in accordance with the applicable legislation.
+    
+6. DELIVERY
+Registration for the service will be effective from the moment the payment has been made.
+
+7. PRICES, EXPENSES AND TAXES
+The prices of the services of {0} will be expressed in Euros unless otherwise stated and will be guaranteed during their validity.
+
+PRODUCTS AND SERVICES
+Enrollment in {3}, is the registration to a non-professional sports competition of soccer, futsal, or soccer-7, in which a minimum of 15 matches will be held. Registration for the service includes the provision of a regulatory field, a referee and changing rooms. In case of contracting medical insurance, you can check these services on the insurer's website.
+The final prices of all services, along with their features, offers, discounts, etc., are reflected in each of the items that appear in the MYGOL app.
+• Services have VAT included.
+• The VAT rate is 21%.
+• Shipping costs: are those indicated when making the purchase.
+The prices of the services may vary at any time. In this case, the price to be applied will be the one in force on the date of registration. In any case, the final cost will be communicated to the customer in the electronic purchase process before it formalizes its acceptance.
+    
+8. FORMS OF PAYMENT
+We put at your disposal these forms of payment:
+to. By credit or debit card
+You can make the payment immediately through the secure payment gateway Stripe (www.stripe.com). If it is necessary to make any return or cancellation of the order, the amount will be refunded through the same payment card. Both personal and bank data will be protected with all security measures established by REGULATION (EU) 2016/679 with total confidentiality.
+    
+9. RETURNS AND WITHDRAWAL POLICY
+According to the regulations, the consumer and user will have the right to WITHDRAW from the contract for a maximum period of 14 calendar days without indicating the reason and without incurring any cost, except those provided for in art. 107.2 and 108 of RD 1/2007, of November 16, which approves the referred text of the General Law for the Defense of Consumers and Users. The customer will bear the costs of returning the goods
+This right of withdrawal is not applicable among others to:
+• When the user has used the competition and any of the services provided (changing rooms, showers, parties, insurance, etc.)
+
+PRODUCTS
+The client will have a maximum period of 14 calendar days from the day of registration to inform {3} about his desire to withdraw from the contract.
+The withdrawal implies that, {3} will proceed to the refund of the amount already paid by the client within a maximum period of one month, following the same procedure chosen by the client for payment (provided that the service purchased is not within the exceptions indicated above).
+During this period, the consumer will inform the employer of his decision to withdraw from the contract by filling out the form at the end of this document and sending it to the email address of {3}.
+{3} communicate to the consumer on durable support an acknowledgment of receipt of such withdrawal.
+Once we receive your request and once the use or non-use of the services is verified, we will contact the customer to indicate the details of the return.
+The customer will bear the costs of returning the amount.
+
+10. CUSTOMER SERVICE AND CLAIMS
+To file any complaint or claim with {3}, the customer should contact the customer service department either at the telephone number {5}, or through the email address {4}.
+In accordance with the EU online dispute resolution on consumer issues and in accordance with Art. 14.1 of Regulation (EU) 524/2013, we inform you that the European Commission provides all consumers with an online dispute resolution platform that It is available at the following link: http://ec.europa.eu/consumers/odr/.
+
+11. APPLICABLE LEGISLATION
+The present conditions will be governed by current Spanish legislation.
+The language used will be Spanish and / or {6}.
+
+
+
+WITHDRAWAL FORM
+
+For the attention of:
+{0}
+{2}
+Phone: {5}
+Email: {4}
+
+I hereby inform you that I withdraw from the sales contract concluded with you in relation to the following products and / or services:
+
+PRODUCT / SERVICE
+________________________________________________________________
+________________________________________________________________
+________________________________________________________________
+
+Order number:
+
+Order Date:
+
+CONSUMER DATA
+Name and surname:
+CIF / NIF / NIE:
+Home:
+Phone:
+E-mail:
+
+In ________________________ on _____ of __________________ of ______.
+Signature:
+
+
+
+
+
+CLAIMS FORM
+
+To the attention of:
+{0}
+{2}
+Phone: {5}
+Email: {4}
+
+PRODUCT / SERVICE
+____________________________________________________________________
+____________________________________________________________________
+
+REASON FOR CLAIM:
+____________________________________________________________________
+____________________________________________________________________
+____________________________________________________________________
+____________________________________________________________________
+____________________________________________________________________
+____________________________________________________________________
+____________________________________________________________________
+____________________________________________________________________
+____________________________________________________________________
+____________________________________________________________________
+____________________________________________________________________
+____________________________________________________________________
+
+Order number:
+
+Order Date:
+
+CLAIMANT DATA
+Name and surname:
+CIF / NIF / NIE:
+Home:
+Phone:
+E-mail:
+
+In ________________________ on _____ of __________________ of ______.
+Signature:
+
+    
+`,
 }

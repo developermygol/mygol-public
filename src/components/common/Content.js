@@ -4,6 +4,7 @@ import routes from './NavBarRoutes';
 import Player from '../pages/Players/Details';
 import ContentDetails from '../pages/Content/ContentDetails';
 import ContentIndex from '../pages/Content/ContentIndex';
+import PrivacyScreen from '../pages/Privacy/PrivacyScreen';
 
 class Content extends Component {
   render = () => {
@@ -14,6 +15,7 @@ class Content extends Component {
             <Route path="/players/:idPlayer" component={Player} />
             <Route path="/content/section/:idCategory" component={ContentIndex} />
             <Route path="/content/:idArticle" component={ContentDetails} />
+            <Route path="/privacy" exact component={PrivacyScreen} />
 
             {routes.map(item => (
               <Route

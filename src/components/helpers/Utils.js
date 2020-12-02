@@ -175,3 +175,18 @@ export const removeTimeFromDate = date => {
 
   return date;
 };
+
+export const interpolateString = (str, ...args) => {
+  let result = str;
+  debugger;
+  for (let i = 0; i < args.length; ++i) result = result.replace('{' + i + '}', args[i]);
+
+  return result;
+};
+
+export const interpolateStringMultiple = (str, ...args) => {
+  let result = str;
+  for (let i = 0; i < args.length; ++i) result = result.replaceAll('{' + i + '}', args[i]);
+
+  return result;
+};

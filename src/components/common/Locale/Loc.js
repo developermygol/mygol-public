@@ -1,6 +1,7 @@
 import { Component } from 'react';
-import Translations from './Translations';
 
+import Translations from './Translations';
+import {interpolateString, interpolateStringMultiple} from '../../helpers/Utils'
 
 const DefaultLanguage = 'es';       // Should match initial value set in Store
 let globalLang = DefaultLanguage;
@@ -30,6 +31,29 @@ export function Localize(key) {
     const translated = Translations[lang][key];
     return translated || "__" + key + '__';
 }
+
+export function LocalizeI(key, ...args) {
+    if (!key) return '';
+
+    const translations = Translations[globalLang];
+    if (translations) {
+        const translated = translations[key];
+        if (translated) return interpolateString(translated, ...args);
+    }
+    return '__' + key + '__';
+}
+
+export function LocalizeIMultyple(key, ...args) {
+    if (!key) return '';
+
+    const translations = Translations[globalLang];
+    if (translations) {
+        const translated = translations[key];
+        if (translated) return interpolateStringMultiple(translated, ...args);
+    }
+    return '__' + key + '__';
+}
+
 
 
 export default Loc;
