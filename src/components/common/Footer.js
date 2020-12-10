@@ -18,7 +18,7 @@ class Footer extends Component {
           <div className="Data">
             <div className="OrgAddress">
               <div className="Basic">
-                <p className="OrgName">{org.name}</p>
+                <p className="OrgName Color1">{org.name}</p>
                 {org.motto ? <p className="OrgMotto">{org.motto}</p> : null}
               </div>
               <p>{org.address1}</p>

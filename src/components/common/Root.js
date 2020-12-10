@@ -13,6 +13,8 @@ import { retriveSponsorsDataByPosition } from '../helpers/Sponsors';
 import { startLoadOrganization } from '../../store/actions/organizations';
 import { startLoadTournaments } from '../../store/actions/tournaments';
 import { startLoadingSponsorsByIdOrganization } from '../../store/actions/sponsors';
+import { setActiveTheme, setOrgTheme } from '../../store/actions/theme';
+import { validJsonString } from '../helpers/Utils';
 
 @inject('store')
 @observer
@@ -28,11 +30,15 @@ class Root extends Component {
     await this.props.onStartLoadOrganitzation();
     await this.props.onStartLoadTournaments();
     await this.props.onStartLoadingSponsorsByIdOrganization(1);
-    this.setState({ loaded: true });
-  };
 
-  componentDidUpdate = (prevPorps, prevState) => {
-    // debugger;
+    const { appearanceData } = this.props.organizations.activeOrganization;
+    const theme = validJsonString(appearanceData);
+    if (theme) {
+      this.props.onSetOrganizationTheme(theme);
+      this.props.onSetActiveTheme(theme);
+    }
+
+    this.setState({ loaded: true });
   };
 
   render() {
@@ -91,12 +97,15 @@ const mapStateToProps = state => ({
   organizations: state.organizations,
   tournaments: state.tournaments,
   sponsors: state.sponsors,
+  theme: state.theme,
 });
 
 const mapDispatchToProps = dispatch => ({
   onStartLoadOrganitzation: () => dispatch(startLoadOrganization()),
   onStartLoadTournaments: () => dispatch(startLoadTournaments()),
   onStartLoadingSponsorsByIdOrganization: id => dispatch(startLoadingSponsorsByIdOrganization(id)),
+  onSetOrganizationTheme: theme => dispatch(setOrgTheme(theme)),
+  onSetActiveTheme: theme => dispatch(setActiveTheme(theme)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Root);

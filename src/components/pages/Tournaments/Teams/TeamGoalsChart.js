@@ -1,39 +1,40 @@
 import React, { Component } from 'react';
 import { Bar } from 'react-chartjs-2';
+
 import Loc from '../../../common/Locale/Loc';
 import { getSettings } from '../../../common/Chart';
 
-
 const defaultProps = {
-    data: [],
-    numDays: 10
-}
-
+  data: [],
+  numDays: 10,
+};
 
 class TeamGoalsChart extends Component {
+  constructor(props) {
+    super(props);
 
+    const s = this.props.theme
+      ? getSettings('Points', props.data, props.numDays, this.props.theme.color1, this.props.theme.color2)
+      : getSettings('Points', props.data, props.numDays);
 
-    constructor(props) {
-        super(props);
+    // Adapt settings to this chart
+    s.options.scales.yAxes[0].ticks.stepSize = 1;
 
-        const s = getSettings('Points', props.data, props.numDays);
+    this.settings = s;
+  }
 
-        // Adapt settings to this chart
-        s.options.scales.yAxes[0].ticks.stepSize = 1;
+  render() {
+    if (!this.settings) return null;
 
-        this.settings = s;
-    }    
-
-    render() {
-        if (!this.settings) return null;
-        
-        return (
-            <div className='Chart'>
-                <h4><Loc>Points</Loc></h4>
-                <Bar width={4} height={1} data={this.settings.data} options={this.settings.options} />
-            </div>
-        )
-    }
+    return (
+      <div className="Chart">
+        <h4 className="Color1">
+          <Loc>Points</Loc>
+        </h4>
+        <Bar width={4} height={1} data={this.settings.data} options={this.settings.options} />
+      </div>
+    );
+  }
 }
 
 TeamGoalsChart.defaultProps = defaultProps;

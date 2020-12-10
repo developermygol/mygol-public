@@ -47,13 +47,13 @@ class MatchView extends Component {
                 <span className="MatchPlaying">
                   <Loc>MatchStatus3</Loc>
                 </span>
-                <span className="Score">{match.homeScore}</span>
-                <span className="Score">{match.visitorScore}</span>
+                <span className="Score Color2">{match.homeScore}</span>
+                <span className="Score Color2">{match.visitorScore}</span>
               </div>
             ) : (
               <React.Fragment>
-                <span className="Score">{match.homeScore}</span>
-                <span className="Score">{match.visitorScore}</span>
+                <span className="Score Color2">{match.homeScore}</span>
+                <span className="Score Color2">{match.visitorScore}</span>
               </React.Fragment>
             )}
           </td>

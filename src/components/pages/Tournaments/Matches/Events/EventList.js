@@ -66,13 +66,13 @@ class EventList extends Component {
               <span>
                 {getUploadsImg(player.userData.avatarImgUrl, player.userData.id, 'user', 'PlayerAvatar Mini')}
               </span>
-              <span className="ApparelNumber">{player.matchData.apparelNumber}</span>
+              <span className="ApparelNumber Color1Border">{player.matchData.apparelNumber}</span>
             </Fragment>
           );
         else
           return (
             <Fragment>
-              <span className="ApparelNumber">{player.matchData.apparelNumber}</span>
+              <span className="ApparelNumber Color1Border">{player.matchData.apparelNumber}</span>
               <span>
                 {getUploadsImg(player.userData.avatarImgUrl, player.userData.id, 'user', 'PlayerAvatar Mini')}
               </span>

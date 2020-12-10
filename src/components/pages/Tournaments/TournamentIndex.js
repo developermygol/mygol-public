@@ -3,6 +3,11 @@ import { Link, withRouter } from 'react-router-dom';
 import { inject, observer } from 'mobx-react';
 import { connect } from 'react-redux';
 
+import { retriveSponsorsDataByPosition } from '../../helpers/Sponsors';
+import { setActiveTournament } from '../../../store/actions/tournaments';
+import { startLoadingSponsorsByIdTournament } from '../../../store/actions/sponsors';
+import { setActiveTheme, setTournamentTheme } from '../../../store/actions/theme';
+
 import Classification from './Classification';
 import Spinner from '../../common/Spinner/Spinner';
 import Calendar from './Calendar/Calendar';
@@ -11,9 +16,7 @@ import SharedSponsorBanners from '../../shared/SponsorBanners';
 import Loc from '../../common/Locale/Loc';
 import TournamentSanctionsSummary from './Sanctions/TournamentSanctionsSummary';
 import Rankings from './Rankings/Rankings';
-import { retriveSponsorsDataByPosition } from '../../helpers/Sponsors';
-import { setActiveTournament } from '../../../store/actions/tournaments';
-import { startLoadingSponsorsByIdTournament } from '../../../store/actions/sponsors';
+import { validJsonString } from '../../helpers/Utils';
 
 @inject('store')
 @observer
@@ -22,19 +25,25 @@ class CompetitionHome extends Component {
     loaded: false,
   };
 
-  componentDidMount = () => {
-    if (this.props.tournaments.activeTournament) this.setState({ loaded: true });
+  componentDidMount = async () => {
+    const tournamentId = parseInt(this.props.match.params.idTournament, 10);
+    await this.props.onStartLoadingSponsorsByIdTournament(tournamentId);
+    await this.props.onSetActiveTournamnet(
+      this.props.tournaments.tournaments.find(t => t.id === tournamentId)
+    );
+
+    const { appearanceData } = this.props.tournaments.activeTournament;
+    const theme = validJsonString(appearanceData);
+    if (theme) {
+      this.props.onSetTournamentTheme(theme);
+      this.props.onSetActiveTheme(theme);
+    }
+    this.setState({ loaded: true });
   };
 
-  componentDidUpdate = async (prevProps, prevState) => {
-    if (!prevProps.tournaments.activeTournament) {
-      const tournamentId = parseInt(this.props.match.params.idTournament, 10);
-      await this.props.onStartLoadingSponsorsByIdTournament(tournamentId);
-      await this.props.onSetActiveTournamnet(
-        this.props.tournaments.tournaments.find(t => t.id === tournamentId)
-      );
-      this.setState({ loaded: true });
-    }
+  componentWillUnmount = () => {
+    this.props.onSetTournamentTheme(null);
+    if (this.props.theme.themeOrganization) this.props.onSetActiveTheme(this.props.theme.themeOrganization);
   };
 
   render() {
@@ -54,7 +63,7 @@ class CompetitionHome extends Component {
         <div className="Header"></div>
         <Spinner loading={t === undefined || t === null}>
           <div className="Section">
-            <h3>
+            <h3 className="Color2">
               <Loc>Classification</Loc>
             </h3>
             <div className="Content">
@@ -71,7 +80,7 @@ class CompetitionHome extends Component {
           />
 
           <div className="Section">
-            <h3>
+            <h3 className="Color2">
               <Loc>Calendar</Loc>
             </h3>
             <div className="Content">
@@ -85,7 +94,7 @@ class CompetitionHome extends Component {
           {}
 
           <div className="Section">
-            <h3>
+            <h3 className="Color2">
               <Loc>Rankings</Loc>
             </h3>
             <Rankings tournament={t} history={this.props.history} />
@@ -94,7 +103,7 @@ class CompetitionHome extends Component {
           {}
 
           <div className="Section">
-            <h3>
+            <h3 className="Color2">
               <Loc>Sanctions</Loc>
             </h3>
             <div className="Content">
@@ -111,11 +120,14 @@ const mapStateToProps = state => ({
   organizations: state.organizations,
   tournaments: state.tournaments,
   sponsors: state.sponsors,
+  theme: state.theme,
 });
 
 const mapDispatchToProps = dispatch => ({
   onSetActiveTournamnet: tournament => dispatch(setActiveTournament(tournament)),
   onStartLoadingSponsorsByIdTournament: id => dispatch(startLoadingSponsorsByIdTournament(id)),
+  onSetTournamentTheme: theme => dispatch(setTournamentTheme(theme)),
+  onSetActiveTheme: theme => dispatch(setActiveTheme(theme)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withRouter(CompetitionHome));

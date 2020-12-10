@@ -21,16 +21,32 @@ const RankingAll = ({ match }) => {
   return (
     <div className="RankingAll">
       <ul className="TabBar">
-        <button name="scorers" className={`TabItem ${isScorers && 'Active'}`} onClick={handleActiveChange}>
+        <button
+          name="scorers"
+          className={`TabItem ${isScorers ? 'Active Color1' : 'Color2'}`}
+          onClick={handleActiveChange}
+        >
           <Loc>ScorersRanking</Loc>
         </button>
-        <button name="keepers" className={`TabItem ${isKeeprs && 'Active'}`} onClick={handleActiveChange}>
+        <button
+          name="keepers"
+          className={`TabItem ${isKeeprs ? 'Active Color1' : 'Color2'}`}
+          onClick={handleActiveChange}
+        >
           <Loc>GoalKeepersRanking</Loc>
         </button>
-        <button name="assists" className={`TabItem ${isAssists && 'Active'}`} onClick={handleActiveChange}>
+        <button
+          name="assists"
+          className={`TabItem ${isAssists ? 'Active Color1' : 'Color2'}`}
+          onClick={handleActiveChange}
+        >
           <Loc>AssistancesRanking</Loc>
         </button>
-        <button name="mvps" className={`TabItem ${isMVPs && 'Active'}`} onClick={handleActiveChange}>
+        <button
+          name="mvps"
+          className={`TabItem ${isMVPs ? 'Active Color1' : 'Color2'}`}
+          onClick={handleActiveChange}
+        >
           <Loc>MvpsRanking</Loc>
         </button>
       </ul>

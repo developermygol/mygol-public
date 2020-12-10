@@ -15,6 +15,7 @@ import SponsorBanner from '../../../common/SponsorBanner';
 import TeamPicture from './TeamPicture';
 import Apparel from './Apparel/Apparel';
 import TeamSanctions from '../Sanctions/TeamSanctions';
+import { connect } from 'react-redux';
 
 @inject('store')
 @observer
@@ -41,6 +42,7 @@ class TeamIndex extends Component {
 
   render() {
     const team = this.team;
+    const theme = this.props.theme.activeTheme;
 
     return (
       <Spinner loading={this.loading}>
@@ -48,12 +50,12 @@ class TeamIndex extends Component {
           <div className="SectionContainer">
             <TitleOneLineComponent
               title={team.name}
-              image={getUploadsImg(team.logoImgUrl, team.id, 'team', 'TeamLogo')}
+              image={getUploadsImg(team.logoImgUrl, team.id, 'team', 'TeamLogo Color1')}
               className="Team"
             />
 
             <div className="Section">
-              <h3>
+              <h3 className="Color2">
                 <Loc>Players</Loc>
               </h3>
               <TeamPicture image={team.teamImgUrl} />
@@ -74,16 +76,21 @@ class TeamIndex extends Component {
             </div>
 
             <div className="Section Rankings">
-              <h3>
+              <h3 className="Color2">
                 <Loc>Rankings</Loc>
               </h3>
               <div className="Content">
                 <div className="WideContainer">
-                  <TeamGoalsChart data={this.getResult(team.days, 'points')} numDays={team.days.length} />
+                  <TeamGoalsChart
+                    data={this.getResult(team.days, 'points')}
+                    numDays={team.days.length}
+                    theme={theme}
+                  />
                   <TeamRankingChart
                     data={this.getResult(team.days, 'ranking1')}
                     numDays={team.days.length}
                     numTeams={team.days.length + 1}
+                    theme={theme}
                   />
                 </div>
               </div>
@@ -99,7 +106,7 @@ class TeamIndex extends Component {
                     </div> */}
 
             <div className="Section">
-              <h3>
+              <h3 className="Color2">
                 <Loc>Matches</Loc>
               </h3>
               <div className="Content">
@@ -108,7 +115,7 @@ class TeamIndex extends Component {
             </div>
 
             <div className="Section">
-              <h3>
+              <h3 className="Color2">
                 <Loc>Sanctions.Team.All</Loc>
               </h3>
               <div className="Content">
@@ -122,4 +129,8 @@ class TeamIndex extends Component {
   }
 }
 
-export default TeamIndex;
+const mapStateToProps = state => ({
+  theme: state.theme,
+});
+
+export default connect(mapStateToProps)(TeamIndex);

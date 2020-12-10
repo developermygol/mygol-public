@@ -22,7 +22,7 @@ class PlayerDayStats extends Component {
 
     return (
       <div className="PlayerDayStats">
-        <h4>
+        <h4 className="Color1">
           <Loc>LastDay</Loc>
         </h4>
         <StatsDetailField caption="Points" value={palyerDayResults.points} />

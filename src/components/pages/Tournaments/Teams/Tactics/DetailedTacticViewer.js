@@ -24,7 +24,7 @@ export default class DetailedTacticViewer extends Component {
     return (
       <div className="TacticDetails">
         <Spinner loading={this.props.store.tactics.loading}>
-          <h3>
+          <h3 className="Color2">
             <Loc>Tactic</Loc>
           </h3>
           <div className="Field">

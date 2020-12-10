@@ -54,7 +54,7 @@ class DataTable extends Component {
     return (
       <table className="DataTable">
         <thead>
-          <tr className="DataTableHeaderRow">
+          <tr className="DataTableHeaderRow Color1">
             {this.props.columns.map(col => {
               if (!col) return null;
               return (
@@ -63,7 +63,7 @@ class DataTable extends Component {
                   key={col.id}
                   style={{ width: col.width }}
                 >
-                  <span className="DataTableHeaderSpan">{col.label}</span>
+                  <span className="DataTableHeaderSpan Color3">{col.label}</span>
                 </th>
               );
             })}

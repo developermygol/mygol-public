@@ -3,22 +3,20 @@ import { getUploadsImg } from '../../helpers/Utils';
 import { setupRawContent } from '../../../store-mobx/ContentStore';
 import VideoContainer from './VideoContainer';
 
-
 class ContentArticle extends Component {
+  render() {
+    const p = this.props;
+    const { entry } = p;
+    if (!entry) return null;
 
-    render() {
-        const p = this.props;
-        const { entry } = p;
-        if (!entry) return null;
+    return (
+      <div className="ContentArticle">
+        <div className="MainMedia">
+          {entry.videoUrl ? <VideoContainer video={entry.videoUrl} /> : null}
+          {entry.mainImgUrl ? getUploadsImg(entry.mainImgUrl, entry.id, null, 'MainImage Color1') : null}
+        </div>
 
-        return (
-            <div className='ContentArticle'>
-                <div className='MainMedia'>
-                    {entry.videoUrl ? <VideoContainer video={entry.videoUrl} /> : null }
-                    {entry.mainImgUrl ? getUploadsImg(entry.mainImgUrl, entry.id, null, 'MainImage') : null}
-                </div>
-
-                {/* <div 
+        {/* <div 
                     className='MainImg'
                     style={{backgroundImage: 'url(' + getUploadsIcon(entry.mainImgUrl, entry.id, 'summary', '') + ')' }} >
                     
@@ -27,13 +25,15 @@ class ContentArticle extends Component {
                     </div>
                 </div> */}
 
-                <h1>{entry.title}</h1>
-                {entry.subTitle ? <h2>{entry.subTitle}</h2> : null }
-                <div className='RawContent' dangerouslySetInnerHTML={{__html: setupRawContent(entry.rawContent)}} >
-                </div>
-            </div>
-        )
-    }
+        <h1 className="Color3">{entry.title}</h1>
+        {entry.subTitle ? <h2>{entry.subTitle}</h2> : null}
+        <div
+          className="RawContent"
+          dangerouslySetInnerHTML={{ __html: setupRawContent(entry.rawContent) }}
+        ></div>
+      </div>
+    );
+  }
 }
 
 export default ContentArticle;

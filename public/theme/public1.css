@@ -67,10 +67,10 @@ h2 {
   margin-bottom: 40px;
 }
 
-.Color1 {
+/* .Color1 {
   color: #e7a016 !important;
   border-color: #e7a016 !important;
-}
+} */
 
 .Button {
   background: none;
@@ -1415,7 +1415,7 @@ footer .Website {
   font-size: 3rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: white;
+  /* color: white; */
   margin: 30px 0 10px 0;
 }
 
@@ -1423,19 +1423,19 @@ footer .Website {
   font-size: 2rem;
   font-weight: 800;
   text-transform: uppercase;
-  color: white;
+  /* color: white; */
   margin: 20px 0 10px 0;
 }
 
 .RawContent h3 {
   font-size: 1.6rem;
   font-weight: 600;
-  color: white;
+  /* color: white; */
   margin: 10px 0 10px 0;
 }
 
 .RawContent p {
-  color: white;
+  /* color: white; */
   margin: 10px 0 0px 0;
   line-height: 1.6em;
 }
@@ -2105,7 +2105,7 @@ footer .Website {
   }
 
   .TitleOne h2::first-line {
-    color: #e7a016;
+    /* color: #e7a016; */
     display: inline-block;
   }
 

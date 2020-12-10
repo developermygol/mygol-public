@@ -9,8 +9,13 @@ const types = {
   tournamentSetSponsorData: '[Tournaments] Set tournament sponsor data',
 
   //Sponsors
-  sponsorsOrganizationLoad: '[Sponsor] Load Organization sponsors',
-  sponsorsTournamentLoad: '[Sponsor] Load Tournament sponsors',
+  sponsorsOrganizationLoad: '[Sponsor] Load organization sponsors',
+  sponsorsTournamentLoad: '[Sponsor] Load tournament sponsors',
+
+  //Theme
+  themeOrganizationSet: '[Theme] Set organization theme',
+  themeTournamentSet: '[Theme] Set tournament theme',
+  themeActiveSet: '[Theme] Set active theme',
 };
 
 export default types;

@@ -24,7 +24,7 @@ class PlayerTable extends Component {
             <tr key={pl.id}>
               {pl.matchData ? (
                 <td>
-                  <span className="ApparelNumber">{pl.matchData.apparelNumber}</span>
+                  <span className="ApparelNumber Color1Border">{pl.matchData.apparelNumber}</span>
                 </td>
               ) : (
                 <td></td>

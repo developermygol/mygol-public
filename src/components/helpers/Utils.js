@@ -190,3 +190,11 @@ export const interpolateStringMultiple = (str, ...args) => {
 
   return result;
 };
+
+export const validJsonString = jsonString => {
+  try {
+    return JSON.parse(jsonString);
+  } catch (err) {
+    return null;
+  }
+};

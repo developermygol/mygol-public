@@ -164,7 +164,7 @@ const PlayerRadioLabel = props => {
   return (
     <span className="PlayerOption">
       {getUploadsImg(p.userData.avatarImgUrl, p.id, 'user', 'PlayerAvatar Mini')}
-      <span className="ApparelNumber">{p.matchData.apparelNumber}</span>
+      <span className="ApparelNumber Color1Border">{p.matchData.apparelNumber}</span>
       <span className="Name">{p.name + ' ' + p.surname}</span>
     </span>
   );
