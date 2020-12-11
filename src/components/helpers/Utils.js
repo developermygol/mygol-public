@@ -135,33 +135,58 @@ export const getCurrentDaysInObjectArray = (array, getDateCallback) => {
   const result = { previous: null, next: null, previousIdx: -1, nextIdx: 0 };
   if (!array || array.length === 0) return result;
 
-  let lastTarget = null;
+  // let lastTarget = null;
   const today = removeTimeFromDate(new Date());
+  const todayTime = today.getTime();
 
   let hasDateInRange = false;
 
-  for (let i = 0; i < array.length; ++i) {
-    const row = array[i];
-    if (!row) continue;
+  let first = true;
+  array.forEach((element, index) => {
+    const matchesDates = element.matches.map(m => removeTimeFromDate(new Date(m.startTime)).getTime());
 
-    let objectDate = removeTimeFromDate(getDateCallback(row));
-    if (!objectDate) continue;
-    if (today >= objectDate) {
-      if (!hasDateInRange) hasDateInRange = true;
-      result.previous = lastTarget;
-      result.next = row;
-      result.nextIdx = i;
-      result.previousIdx = i - 1;
-      continue;
-    }
+    matchesDates.forEach(matchDate => {
+      if (todayTime >= matchDate) {
+        if (!hasDateInRange) hasDateInRange = true;
+      }
 
-    if (objectDate >= today) {
-      break;
-    }
+      if (matchDate >= todayTime) {
+        if (first) {
+          result.previous = index !== 0 ? array[index - 1] : null;
+          result.next = element;
+          result.nextIdx = index;
+          result.previousIdx = index - 1;
+          first = false;
+        }
+      }
+    });
+  });
 
-    lastTarget = row;
-  }
   if (!hasDateInRange) result.nextIdx = array.length - 1; // Set to final by default
+
+  // 🔎 INITIAL
+  // for (let i = 0; i < array.length; ++i) {
+  //   const row = array[i];
+  //   if (!row) continue;
+
+  //   let objectDate = removeTimeFromDate(getDateCallback(row));
+  //   if (!objectDate) continue;
+  //   if (today >= objectDate) {
+  //     if (!hasDateInRange) hasDateInRange = true;
+  //     result.previous = lastTarget;
+  //     result.next = row;
+  //     result.nextIdx = i;
+  //     result.previousIdx = i - 1;
+  //     continue;
+  //   }
+
+  //   if (objectDate >= today) {
+  //     break;
+  //   }
+
+  //   lastTarget = row;
+  // }
+  // if (!hasDateInRange) result.nextIdx = array.length - 1; // Set to final by default
   return result;
 };
 
@@ -178,7 +203,7 @@ export const removeTimeFromDate = date => {
 
 export const interpolateString = (str, ...args) => {
   let result = str;
-  debugger;
+
   for (let i = 0; i < args.length; ++i) result = result.replace('{' + i + '}', args[i]);
 
   return result;

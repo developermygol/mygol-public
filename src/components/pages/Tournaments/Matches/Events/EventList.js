@@ -24,7 +24,6 @@ const defaultProps = {
 @observer
 class EventList extends Component {
   getTeam = (match, idTeam) => {
-    debugger;
     const team = match.idHomeTeam === idTeam ? match.homeTeam : match.visitorTeam;
     return team;
   };
