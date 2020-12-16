@@ -1,7 +1,8 @@
+import React from 'react';
 import { findByIdInArray } from '../../helpers/Data';
 import { Localize } from '../Locale/Loc';
 import { getFormattedDate, getFormattedDateTime } from './Utils';
-import { getUploadsImg } from '../../helpers/Utils';
+import { getUploadsImg, validJsonString } from '../../helpers/Utils';
 
 // __ Render handlers _________________________________________________________
 
@@ -82,6 +83,27 @@ export const logo = (logoField, idField, type = 'user', className = '') => {
 
 export const rankHandler = (row, columnDefinition, index) => {
   return index + 1;
+};
+
+export const rankHandlerClassification = (row, columnDefinition, index, stage) => {
+  const colorConfig = stage.colorConfig ? validJsonString(stage.colorConfig) : null;
+  const position = index + 1;
+  let colorAssigned = null;
+
+  if (colorConfig) {
+    const assignedColorConfig = colorConfig.find(c => position >= c.start && position <= c.end);
+    if (assignedColorConfig) colorAssigned = assignedColorConfig.color;
+  }
+
+  if (colorAssigned)
+    return (
+      <p className="ColoredRank">
+        <span className="RankColor" style={{ backgroundColor: colorAssigned }}></span>
+        <span className="Rank">{position}</span>
+      </p>
+    );
+
+  return position;
 };
 
 export const goalsConceadedDividedByGamesPlayedHandler = (row, columnDefinition, index) => {

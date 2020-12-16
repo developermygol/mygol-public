@@ -2373,3 +2373,17 @@ footer .Website {
 .SponsorSlider {
   margin-bottom: 20px;
 }
+
+.ColoredRank {
+  width: 100%;
+  position: relative;
+}
+
+.RankColor {
+  position: absolute;
+  left: 0;
+  display: inline-block;
+  margin: -5px 0 -6px 0;
+  width: 4px;
+  height: 33px;
+}
