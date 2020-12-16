@@ -20,10 +20,10 @@ class Content extends Component {
   render() {
     const p = this.props;
     const target = p.store.contents;
-
+    
     const MiddleSponsors = this.props.sponsors.sponsorsOrganization.filter(sp => sp.position === 2);
     const stringSponsorsData = this.props.organizations.activeOrganization.sponsorData;
-    const sponsorsConfig = stringSponsorsData === '' ? null : JSON.parse(stringSponsorsData);
+    const sponsorsConfig = !stringSponsorsData || stringSponsorsData === '' ? null : JSON.parse(stringSponsorsData);
 
     return (
       <Spinner loading={target.loading}>
