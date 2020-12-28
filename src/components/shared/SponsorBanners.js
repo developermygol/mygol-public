@@ -8,7 +8,9 @@ const SponsorBanner = ({ className, isOrganization, isTournament, sponsors, conf
   if (sponsors.length === 0 || config.hide) return null;
   let isSlider = config.type === 1;
 
-  const sponsorsItems = sponsors.map(sp => <SponsorItem key={uuidv4()} className={className} sponsor={sp} />);
+  const sponsorsItems = sponsors.map(sp => (
+    <SponsorItem key={uuidv4()} className={isSlider ? 'Slider' : className} sponsor={sp} />
+  ));
 
   if (isSlider)
     return (

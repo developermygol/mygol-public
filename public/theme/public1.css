@@ -2073,6 +2073,10 @@ footer .Website {
     margin-bottom: 20px;
   }
 
+  .SponsorBanner.Slider {
+    min-height: 160px;
+  }
+
   .Title {
     height: 178px;
     margin-bottom: 40px;

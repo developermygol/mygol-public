@@ -5,12 +5,14 @@ const settings = {
   dots: false,
   arrows: false,
   infinite: true,
+  autoplay: true,
   autoplaySpeed: 7000,
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
   vertical: true,
   verticalSwiping: true,
+  cssEase: 'linear',
   //   beforeChange: function (currentSlide, nextSlide) {
   //     console.log('before change', currentSlide, nextSlide);
   //   },
