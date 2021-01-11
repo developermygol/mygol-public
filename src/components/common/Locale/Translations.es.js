@@ -181,9 +181,20 @@ export default {
     "FieldSide3": "Derecha",
 
     "Awards": "Éxitos",
+    "Award": "Exito",
+
     "Award_DreamTeam": "Equipo ideal",
     "Award_MVP": "Most Valued Player",
     "Award_MaxScorer": "Máximo goleador",
+
+    "AwardType0": "Dream team",
+    "AwardType1": "Most Valued Player",
+    "AwardType10": "Top Scorers Ranking",
+    "AwardType20": "Top Goalkeepers Ranking", 
+    "AwardType30": "Top Assistances Ranking", 
+    "AwardType40": "Top MVPs Ranking", 
+    "AwardType50": "Best Fair Play", 
+
     "PlayerStatus": "Estado",
     "PlayerStatus.Hint": "Estado de la inscripción del jugador",
     "Email": "Email",

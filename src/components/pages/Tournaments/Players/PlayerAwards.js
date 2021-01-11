@@ -1,7 +1,8 @@
 import React from 'react';
 import Loc from '../../../common/Locale/Loc';
+import { awardTypes } from '../../../helpers/Awards';
 
-const awardTypes = ['Award_DreamTeam', 'Award_MVP', 'Award_MaxScorer'];
+// const awardTypes = ['Award_DreamTeam', 'Award_MVP', 'Award_MaxScorer'];
 
 export default props => {
   const { player, currentIdTeam, currentIdTournament } = props;
@@ -22,7 +23,7 @@ export default props => {
       {relevantAwards ? (
         <ul className="AwardList">
           {relevantAwards.map((award, i) => {
-            const typeKey = awardTypes[award.type];
+            const typeKey = awardTypes(award.type);
 
             return (
               <li className={'Award ' + typeKey} key={i}>

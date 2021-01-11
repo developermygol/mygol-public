@@ -8,12 +8,21 @@ import { withRouter } from 'react-router-dom';
 @observer
 class PlayerSanctions extends Component {
   render() {
+    const { sanctions, currentIdTeam, currentIdTournament } = this.props;
+    // console.log(sanctions, currentIdTeam, currentIdTournament);
+    const filteredSanctions = sanctions.filter(
+      sanction =>
+        sanction.idTournament === parseInt(currentIdTournament, 10) &&
+        sanction.idTeam === parseInt(currentIdTeam, 10)
+    );
+
     return (
       <div className="Section">
         <h3 className="Color2">
           <Loc>Sanctions.Player.All</Loc>
         </h3>
-        <SanctionList data={this.props.sanctions} />
+        {/* <SanctionList data={sanctions} /> */}
+        <SanctionList data={filteredSanctions} />
       </div>
     );
   }

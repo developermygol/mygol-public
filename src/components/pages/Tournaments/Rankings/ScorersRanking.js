@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { v4 as uuidV4 } from 'uuid';
 import { observer, inject } from 'mobx-react';
 import { observable, action } from 'mobx';
 import { requestAsync, getPlayerLink, getTeamLink, getTeamLogo, getUploadsImg } from '../../../helpers/Utils';
@@ -56,16 +57,20 @@ class ScorersRanking extends Component {
         }
 
         if (!this.data[0]) return null;
-        const noIdPlayer = this.data[0].idPlayer === 0;
+
+        // console.log(this.data);
+        const firstPlayerData = type !== 1 ? this.data[0].grouped[0] : this.data[0];
+
+        const noIdPlayer = firstPlayerData.idPlayer === 0;
 
         if (noIdPlayer)
-          this.props.store.players.actions.get('/user/' + this.data[0].idUser).then(
+          this.props.store.players.actions.get('/user/' + firstPlayerData.idUser).then(
             action(res => {
               this.first = res;
             })
           );
         else
-          this.props.store.players.actions.get(this.data[0].idPlayer).then(
+          this.props.store.players.actions.get(firstPlayerData.idPlayer).then(
             action(res => {
               this.first = res;
             })
@@ -97,7 +102,7 @@ class ScorersRanking extends Component {
           <Fragment>
             {this.data.map(target => {
               return (
-                <div className="">
+                <div key={uuidV4()} className="">
                   <h4>{target.name}</h4>
                   <ScorersTable
                     idTournament={idTournament}

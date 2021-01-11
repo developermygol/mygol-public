@@ -1002,19 +1002,23 @@ footer .Wrapper {
   background-image: url('public1/awards/mvp.png');
 }
 
-.Award_MaxScorer {
+.Award_MaxScorer,
+.AwardType10 {
   background-image: url('public1/awards/maxscorer.png');
 }
 
-.Award_MaxGoalKeeper {
+.Award_MaxGoalKeeper,
+.AwardType20 {
   background-image: url('public1/awards/GoalKeeper.png');
 }
 
-.Award_MaxAssistances {
+.Award_MaxAssistances,
+.AwardType30 {
   background-image: url('public1/awards/assistances.png');
 }
 
-.Award_MaxMVPs {
+.Award_MaxMVPs,
+.AwardType40 {
   background-image: url('public1/awards/dreamteampoints.png');
 }
 

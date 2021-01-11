@@ -60,7 +60,11 @@ class PlayerIndex extends Component {
             <PlayerSocial player={player} />
             <PlayerAwards player={player} currentIdTeam={idTeam} currentIdTournament={idTournament} />
             <PlayerStats player={player} />
-            <PlayerSanctions sanctions={player.sanctions} />
+            <PlayerSanctions
+              sanctions={player.sanctions}
+              currentIdTeam={idTeam}
+              currentIdTournament={idTournament}
+            />
           </div>
         ) : (
           <InfoBox>
