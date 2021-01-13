@@ -271,7 +271,9 @@ export default {
     "MatchStatus2": "Programado",
     "MatchStatus3": "En juego",
     "MatchStatus4": "Terminado",
-    "MatchStatus5": "Cancelado",
+    "MatchStatus5": "Terminado",
+    "MatchStatus6": "Aplazado",
+    "MatchStatus8": "Cancelado",
     "MatchStatus10": "Equipo descansa",
 
     "MatchEventMinute": "Minuto de partido",

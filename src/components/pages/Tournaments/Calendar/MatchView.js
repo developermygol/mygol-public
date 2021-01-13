@@ -74,6 +74,11 @@ class MatchView extends Component {
           )}
         </td>
         <td>{match.field ? '@ ' + (match.field && match.field.name) : null}</td>
+        {match.videoUrl && (
+          <td className="MatchVideoWrapper">
+            <span className="MatchVideo">Vi</span>
+          </td>
+        )}
       </tr>
     );
   }

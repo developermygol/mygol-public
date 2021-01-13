@@ -113,7 +113,7 @@ class SanctionAllegation extends Component {
   render() {
     const p = this.props;
     const al = p.allegation;
-    console.log(al);
+    // console.log(al);
     // const user = al.user || { level: al.idUser >= 10000000 ? 5 : 1, name: '' };
 
     return (

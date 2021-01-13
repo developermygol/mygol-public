@@ -490,6 +490,11 @@ footer .Wrapper {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.MatchDetails .VideoContainer {
+  margin-bottom: 20px;
+  border: 2px solid;
+}
+
 .MatchSchedule {
   padding-right: 10px;
 }
@@ -550,6 +555,18 @@ footer .Wrapper {
 
 .MatchNoScore {
   text-align: center;
+}
+
+.MatchVideoWrapper {
+  width: 30px;
+}
+
+.MatchVideo {
+  text-indent: -9999px;
+  display: inline-block;
+  width: 30px;
+  height: 20px;
+  background: url(public1/video.png) no-repeat center;
 }
 
 .MatchesTable table {
