@@ -7,47 +7,36 @@ import Spinner from '../../common/Spinner/Spinner';
 import ContentArticle from './ContentArticle';
 import { observable } from 'mobx';
 
-
 @observer
 class ContentDetails extends Component {
-    
-    @observable loading = true;
-    @observable error = null;
-    @observable data = null;
+  @observable loading = true;
+  @observable error = null;
+  @observable data = null;
 
-    updateArticle = () => {
-        const { idArticle } = this.props.match.params;
+  updateArticle = () => {
+    const { idArticle } = this.props.match.params;
 
-        requestAsync(this, axios.get, null, '/contents/' + idArticle)
-            .then(res => this.data = res);
-    }
+    requestAsync(this, axios.get, null, '/contents/' + idArticle).then(res => (this.data = res));
+  };
 
-    componentDidMount() {
-        this.updateArticle();
-    }
-    
-    componentDidUpdate = (prevProps) => {
-        // eslint-disable-next-line eqeqeq
-        if (this.props.location != prevProps.location) this.routeChangedHandler();
-    }
+  componentDidMount() {
+    this.updateArticle();
+  }
 
-    routeChangedHandler  = () => {
-        this.updateArticle();
-    }
+  componentDidUpdate = prevProps => {
+    // eslint-disable-next-line eqeqeq
+    if (this.props.location != prevProps.location) this.routeChangedHandler();
+  };
 
-    render() {
-        const entry = this.data;
+  routeChangedHandler = () => {
+    this.updateArticle();
+  };
 
-        return (
-            <Spinner loading={this.loading}>
-                {entry ? 
-                    <ContentArticle entry={entry} />
-                    : 
-                    null
-                }
-            </Spinner>
-        )
-    }
+  render() {
+    const entry = this.data;
+
+    return <Spinner loading={this.loading}>{entry ? <ContentArticle entry={entry} /> : null}</Spinner>;
+  }
 }
 
 export default withRouter(ContentDetails);

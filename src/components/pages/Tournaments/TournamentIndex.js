@@ -32,6 +32,9 @@ class CompetitionHome extends Component {
       this.props.tournaments.tournaments.find(t => t.id === tournamentId)
     );
 
+    // 🚧🔎 MOB-X
+    await this.props.store.tournaments.setCurrent(tournamentId);
+
     const { appearanceData } = this.props.tournaments.activeTournament;
     const theme = validJsonString(appearanceData);
     if (theme) {

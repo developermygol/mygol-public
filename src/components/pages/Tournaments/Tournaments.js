@@ -1,83 +1,30 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import CrudForm from '../../common/FormsMobx/CrudForm';
-import TournamentDetails from './Details';
-import { inject, observer } from 'mobx-react';
-import { textLookup, lookupById } from '../../common/FormsMobx/ListRenderHandlers';
-import { getUploadsIcon } from '../../helpers/Utils';
-import TitleTwoLinesComponent from '../../common/TitleTwoLinesComponent';
-import { Localize } from '../../common/Locale/Loc';
+import { Route, Switch } from 'react-router-dom';
 
-@inject('store')
-@observer
+import Teams from './Teams/Teams';
+import Players from './Players/TournamentPlayers';
+import Matches from './Matches/Matches';
+import TournamentIndex from './TournamentIndex';
+import TournamentSanctions from './Sanctions/TournamentSanctions';
+import RankingAll from './Rankings/RankingAll';
+import AllTournaments from './AllTournaments';
+
 class Tournaments extends Component {
-  getTournamentLogo = tournament => {
-    return (
-      <img alt="" src={getUploadsIcon(tournament.logoImgUrl, tournament.id, 'tournament')} className="Logo" />
-    );
-  };
-
-  componentDidMount = () => {
-    // Load list of tournaments from server here instead of in the list.
-    // This is to ensure that the list is available even when using it in inner routes.
-    this.props.store.tournaments.actions.getAll();
-  };
-
   render() {
-    const tournaments = this.props.store.tournaments;
-    const listData = tournaments.all ? tournaments.all.slice() : null;
-    const modes = this.props.store.organization.tournamentModes;
-
     return (
-      <React.Fragment>
-        <CrudForm
-          title={
-            <TitleTwoLinesComponent
-              title={Localize('Select')}
-              title2={Localize('Tournament')}
-              className="Tournament"
-            />
-          }
-          detailsComponent={TournamentDetails}
-          routeIdParamName="idTournament"
-          listData={listData}
-          fieldDefinition={[
-            {
-              fieldName: 'logoImgUrl',
-              localizedLabel: 'Logo',
-              listRenderHandler: this.getTournamentLogo,
-              editRenderType: 'upload',
-              passProps: { uploadType: 300, idField: 'id' },
-              hideInAdd: true,
-            },
-            {
-              fieldName: 'name',
-              localizedLabel: 'Tournament',
-              localizedHint: 'Tournament name',
-              listRenderHandler: v => <Link to={'/tournaments/' + v.id}>{v.name}</Link>,
-              editRenderType: 'text',
-              selectOptions: null,
-              rules: 'required|between:4,50',
-            },
-            {
-              fieldName: 'idTournamentMode',
-              localizedLabel: 'Tournament mode',
-              listRenderHandler: lookupById(modes, 'idTournamentMode', 'name'),
-              headerClassName: 'Expend',
-              className: 'Expend',
-            },
-            {
-              fieldName: 'status',
-              localizedLabel: 'TournamentStatus',
-              listRenderHandler: textLookup('TournamentStatus', 'status'),
-              hideInEdit: true,
-              hideInAdd: true,
-              headerClassName: 'Expend',
-              className: 'Expend',
-            },
-          ]}
-        />
-      </React.Fragment>
+      <div>
+        <Switch>
+          {/* <Route path='/tournaments/:idTournament/calendar' component={Calendar} /> */}
+          {/* <Route path='/tournaments/:idTournament/sanctions' component={Sanctions} /> */}
+          <Route path="/tournaments/:idTournament/teams" component={Teams} />
+          <Route path="/tournaments/:idTournament/players" component={Players} />
+          <Route path="/tournaments/:idTournament/matches" component={Matches} />
+          <Route path="/tournaments/:idTournament/sanctions" component={TournamentSanctions} />
+          <Route path="/tournaments/:idTournament" exact component={TournamentIndex} />
+          <Route path="/tournaments/:idTournament/rankings" exact component={RankingAll} />
+          <Route path="/tournaments" exact component={AllTournaments} />
+        </Switch>
+      </div>
     );
   }
 }

@@ -3,6 +3,9 @@ const types = {
   organizationsLoad: '[Organizations] Load organizations',
   organizationActiveLoad: '[Organizations] Load active organization',
 
+  //Seasons
+  seasonsLoad: '[Seasons] Load seasons',
+
   //Tournaments
   tournamentsLoad: '[Tournaments] Load tournaments',
   tournamentActiveLoad: '[Tournaments] Load active tournament',

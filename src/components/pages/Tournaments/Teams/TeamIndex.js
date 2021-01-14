@@ -27,6 +27,7 @@ class TeamIndex extends Component {
     const { idTeam, idTournament } = this.props.match.params;
 
     requestAsync(this, axios.get, null, '/teams/' + idTeam + '/details/' + idTournament).then(res => {
+      console.log('res: ', res);
       this.team = res;
       this.props.store.sponsors.forTeam = res.sponsors;
     });
