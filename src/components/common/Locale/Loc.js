@@ -8,7 +8,22 @@ let globalLang = DefaultLanguage;
 
 
 export function setLang(lang) {
-    globalLang = lang;
+    // 🚧🚧🚧 Not all langues implemented yet rever to default es
+    switch(lang) {
+        case 'es': 
+        case 'en':
+            globalLang = lang;
+            break;
+        case 'ca_ES':
+        case 'pt_PT':
+        case 'fr':
+        case 'ar':
+            globalLang = 'es';
+            break;
+        default: globalLang = 'es'
+    }
+
+    // globalLang = lang;  // Uncomment when all languages are available. 
 }
 
 
