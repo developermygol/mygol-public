@@ -20,10 +20,11 @@ class Content extends Component {
   render() {
     const p = this.props;
     const target = p.store.contents;
-    
+
     const MiddleSponsors = this.props.sponsors.sponsorsOrganization.filter(sp => sp.position === 2);
     const stringSponsorsData = this.props.organizations.activeOrganization.sponsorData;
-    const sponsorsConfig = !stringSponsorsData || stringSponsorsData === '' ? null : JSON.parse(stringSponsorsData);
+    const sponsorsConfig =
+      !stringSponsorsData || stringSponsorsData === '' ? null : JSON.parse(stringSponsorsData);
 
     return (
       <Spinner loading={target.loading}>
@@ -34,7 +35,7 @@ class Content extends Component {
             <SharedSponsorBanners
               isOrganization
               sponsors={MiddleSponsors}
-              config={sponsorsConfig ? sponsorsConfig.sections[1] : defaultSponsorConfig}
+              config={sponsorsConfig ? sponsorsConfig.sections[2] : defaultSponsorConfig}
             />
             <ContentSection category={3} perRow={3} entries={target.all} limit={9} moreButton />
           </div>
