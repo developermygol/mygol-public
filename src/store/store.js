@@ -5,11 +5,13 @@ import organizationReducer from './reducers/organizationReducer';
 import seasonsReducer from './reducers/seasonsReducer';
 import tournamentsReducer from './reducers/tournamentsReducer';
 import sponsorsReducer from './reducers/sponsorsReducer';
+import tournamnetModesReducer from './reducers/tournamentModesReducer';
 import themeReducer from './reducers/theme';
 
 const rootReducer = combineReducers({
   organizations: organizationReducer,
   seasons: seasonsReducer,
+  tournamentModes: tournamnetModesReducer,
   tournaments: tournamentsReducer,
   sponsors: sponsorsReducer,
   theme: themeReducer,

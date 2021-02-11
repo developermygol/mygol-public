@@ -173,6 +173,10 @@ export default {
     "FieldPosition4": "Delantero",
     "FieldPosition5": "Delegado no jugador",
     "FieldPosition6": "Entrenador",
+    "FieldPosition7": "Physiotherapist",
+    "FieldPosition10": "Defender F5",
+    "FieldPosition11": "Target F5",
+    "FieldPosition12": "Winger F5",
     
 
     "FieldSide0": "Sin definir",

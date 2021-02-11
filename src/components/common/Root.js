@@ -14,8 +14,9 @@ import { startLoadOrganization } from '../../store/actions/organizations';
 import { startLoadTournaments } from '../../store/actions/tournaments';
 import { startLoadingSponsorsByIdOrganization } from '../../store/actions/sponsors';
 import { setActiveTheme, setOrgTheme } from '../../store/actions/theme';
-import { validJsonString } from '../helpers/Utils';
 import { startLoadSeasons } from '../../store/actions/seasons';
+import { startLoadTournamentModes } from '../../store/actions/torunamentModes';
+import { validJsonString } from '../helpers/Utils';
 
 @inject('store')
 @observer
@@ -30,14 +31,17 @@ class Root extends Component {
 
     await this.props.onStartLoadOrganitzation();
     await this.props.onStartLoadSeasons();
+    await this.props.onStartLoadTournamentModes();
     await this.props.onStartLoadTournaments();
     await this.props.onStartLoadingSponsorsByIdOrganization(1);
 
     const { appearanceData } = this.props.organizations.activeOrganization;
-    const theme = validJsonString(appearanceData);
-    if (theme) {
-      await this.props.onSetOrganizationTheme(theme);
-      await this.props.onSetActiveTheme(theme);
+    if (appearanceData) {
+      const theme = validJsonString(appearanceData);
+      if (theme) {
+        await this.props.onSetOrganizationTheme(theme);
+        await this.props.onSetActiveTheme(theme);
+      }
     }
 
     this.setState({ loaded: true });
@@ -105,6 +109,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   onStartLoadOrganitzation: () => dispatch(startLoadOrganization()),
   onStartLoadSeasons: () => dispatch(startLoadSeasons()),
+  onStartLoadTournamentModes: () => dispatch(startLoadTournamentModes()),
   onStartLoadTournaments: () => dispatch(startLoadTournaments()),
   onStartLoadingSponsorsByIdOrganization: id => dispatch(startLoadingSponsorsByIdOrganization(id)),
   onSetOrganizationTheme: theme => dispatch(setOrgTheme(theme)),

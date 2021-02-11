@@ -2412,3 +2412,52 @@ footer .Website {
   width: 4px;
   height: 33px;
 }
+
+/*DREAM TEAM*/
+.DreamTeamWrapper {
+  display: flex;
+}
+
+.DreamTeamWrapper .TacticContainer {
+  width: 60%;
+}
+
+.DreamTeamTitle {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 1.4em;
+}
+
+.DreamTeamPosition {
+  margin-bottom: 15px;
+}
+
+.DreamTeamPosition h4 {
+  margin: 0 0 5px 0 !important;
+  text-transform: none !important;
+  font-size: 1.2rem !important;
+  font-weight: 400 !important;
+}
+
+.DreamTeamPosition .Player {
+  margin-bottom: 8px;
+  display: flex;
+}
+
+.DreamTeamPosition .Avatar {
+  display: none;
+  max-width: 30px;
+  max-height: 30px;
+  border-radius: 100px;
+  border: 1px solid white;
+  margin-right: 10px;
+}
+
+.DreamTeamPosition .PlayerName {
+  display: inline-block;
+  width: 230px;
+}
+
+.DreamTeamPosition .TeamName {
+  font-size: 0.7rem;
+}

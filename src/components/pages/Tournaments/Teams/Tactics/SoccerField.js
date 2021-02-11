@@ -4,12 +4,17 @@ import { getUploadsIcon, getBaseUrl } from '../../../../helpers/Utils';
 
 export default class SoccerField extends Component {
   getPoints() {
-    const { positions, players } = this.props;
+    const { positions, players, isDreamTeam } = this.props;
     if (!positions) return null;
 
     return positions.map((pos, i) => {
-      const playerIdx = getIndexForValue(players, 'teamData.idTacticPosition', i);
-      const player = playerIdx !== null ? players[playerIdx] : null;
+      let player;
+      if (isDreamTeam) {
+        player = players.find(player => player.idTacticPosition === i); //💥
+      } else {
+        const playerIdx = getIndexForValue(players, 'teamData.idTacticPosition', i);
+        player = playerIdx !== null ? players[playerIdx] : null;
+      }
 
       return (
         <div
@@ -23,7 +28,11 @@ export default class SoccerField extends Component {
         >
           {player ? (
             <img
-              src={getUploadsIcon(player.userData && player.userData.avatarImgUrl, player.id, 'user')}
+              src={
+                isDreamTeam
+                  ? getUploadsIcon(player.avatarImgUrl, player.idPlayer, 'user')
+                  : getUploadsIcon(player.userData && player.userData.avatarImgUrl, player.id, 'user')
+              }
               alt="user-icon"
             />
           ) : null}
@@ -39,7 +48,7 @@ export default class SoccerField extends Component {
     // Decide field type based on numPlayers
     //const numPlayers = this.props.store.tournaments.teamSize;
 
-    const numPlayers = 11;
+    const numPlayers = this.props.numPlayers ? this.props.numPlayers : 11;
     const image = numPlayers === 11 ? 'cesped.png' : 'sala.png';
 
     return (

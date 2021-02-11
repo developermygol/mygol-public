@@ -6,9 +6,13 @@ const types = {
   //Seasons
   seasonsLoad: '[Seasons] Load seasons',
 
+  //TorunamentModes
+  tournamentModesLoad: '[TournamnetModes] Load tournament modes',
+
   //Tournaments
   tournamentsLoad: '[Tournaments] Load tournaments',
   tournamentActiveLoad: '[Tournaments] Load active tournament',
+  tournamentActiveDreamTeamRankingsLoad: '[Tournaments] Load active trournament dreamteam rankings',
   tournamentSetSponsorData: '[Tournaments] Set tournament sponsor data',
 
   //Sponsors
