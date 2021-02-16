@@ -279,6 +279,8 @@ export default {
     "MatchStatus6": "Aplazado",
     "MatchStatus8": "Cancelado",
     "MatchStatus10": "Equipo descansa",
+    "Penalties": "Penalties", 
+    "PenaltiesWinner": "Penalties winner",
 
     "MatchEventMinute": "Minuto de partido",
     "MatchEventType": "Tipo de evento",
@@ -309,6 +311,7 @@ export default {
     "MatchEventType64": "Tarjeta verde",
     "MatchEventType65": "Tarjeta naranja",
     "MatchEventType70": "MVP",
+    "MatchEventType80": "Penaty shootout",
     "MatchEventType100": "Acta cerrada",
 
     // Notifications 

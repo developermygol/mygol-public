@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { getFormattedDateTime } from '../../../common/FormsMobx/Utils';
-import { getUploadsImg } from '../../../helpers/Utils';
-import Loc from '../../../common/Locale/Loc';
+import { getUploadsImg, matchHasSootOut } from '../../../helpers/Utils';
+import Loc, { Localize } from '../../../common/Locale/Loc';
 
 const matchHasResult = match => {
   const s = match.status;
+  console.log(match.status);
   // eslint-disable-next-line eqeqeq
-  return s == 3 || s == 4;
+  return s == 3 || s == 4 || s == 5;
 };
 
 class MatchView extends Component {
@@ -19,6 +20,7 @@ class MatchView extends Component {
     const p = this.props;
     const { match, home, visitor, tId } = p;
     const isMatchPlaying = match.status === 3;
+    const hasShootout = matchHasSootOut(match);
 
     return (
       <tr key={match.id}>
@@ -47,13 +49,23 @@ class MatchView extends Component {
                 <span className="MatchPlaying">
                   <Loc>MatchStatus3</Loc>
                 </span>
-                <span className="Score Color2">{match.homeScore}</span>
-                <span className="Score Color2">{match.visitorScore}</span>
+                <span className="Score Color2">{hasShootout ? match.visibleHomeScore : match.homeScore}</span>
+                <span className="Score Color2">
+                  {hasShootout ? match.visibleVisitorScore : match.visitorScore}
+                  {hasShootout && (
+                    <span className="PenaltiesWinner" title={Localize('PenaltiesWinner')}></span>
+                  )}
+                </span>
               </div>
             ) : (
               <React.Fragment>
-                <span className="Score Color2">{match.homeScore}</span>
-                <span className="Score Color2">{match.visitorScore}</span>
+                <span className="Score Color2">{hasShootout ? match.visibleHomeScore : match.homeScore}</span>
+                <span className="Score Color2">
+                  {hasShootout ? match.visibleVisitorScore : match.visitorScore}
+                  {hasShootout && (
+                    <span className="PenaltiesWinner" title={Localize('PenaltiesWinner')}></span>
+                  )}
+                </span>
               </React.Fragment>
             )}
           </td>

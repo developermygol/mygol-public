@@ -966,6 +966,10 @@ footer .Wrapper {
   background: url('public1/icon-orangecard.png') no-repeat center;
   background-size: 16px 16px;
 }
+.EventType.Type80 {
+  background-color: #98d800;
+  color: white;
+}
 
 .PlayerData {
   margin-bottom: 20px;
@@ -2460,4 +2464,21 @@ footer .Website {
 
 .DreamTeamPosition .TeamName {
   font-size: 0.7rem;
+}
+
+.PenaltiesWinner {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background-color: #fb8c00;
+  border-radius: 10px;
+}
+
+.MatchStatus .Penalties {
+  margin-bottom: 7px;
+}
+
+.MatchStatus .Penalties span {
+  font-weight: 600;
+  font-size: 1.4em;
 }

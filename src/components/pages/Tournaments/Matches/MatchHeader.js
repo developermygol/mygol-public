@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Loc, { Localize } from '../../../common/Locale/Loc';
-import { getUploadsImg } from '../../../helpers/Utils';
+import { getUploadsImg, matchHasSootOut } from '../../../helpers/Utils';
 import { getFormattedDateTime } from '../../../common/FormsMobx/Utils';
 import { Link, withRouter } from 'react-router-dom';
 import VideoContainer from '../../Content/VideoContainer';
@@ -54,6 +54,7 @@ const TeamInfo = withRouter(
 class MatchStatus extends Component {
   render() {
     const { match } = this.props;
+    const hasShootout = matchHasSootOut(match);
     return (
       <div className="MatchStatus">
         <div className="Details">
@@ -70,12 +71,23 @@ class MatchStatus extends Component {
         <div className="Scores">
           {match.status >= 3 ? (
             <Fragment>
-              <span className="Score">{match.homeScore}</span>{' '}
-              <span className="Score">{match.visitorScore}</span>
+              <span className="Score">{hasShootout ? match.visibleHomeScore : match.homeScore}</span>{' '}
+              <span className="Score">{hasShootout ? match.visibleVisitorScore : match.visitorScore}</span>
             </Fragment>
           ) : null}
         </div>
         <div className="Details">
+          {hasShootout && (
+            <p className="Penalties">
+              <span className="Caption">
+                <Loc>Penalties</Loc>
+              </span>
+              :{' '}
+              <span className="Result">
+                {match.homeScore - match.visibleHomeScore} - {match.visitorScore - match.visibleVisitorScore}
+              </span>
+            </p>
+          )}
           <p>
             <span className={'MatchStatus' + match.status}>
               <Loc>{'MatchStatus' + match.status}</Loc>

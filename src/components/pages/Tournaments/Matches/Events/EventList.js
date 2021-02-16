@@ -33,14 +33,18 @@ class EventList extends Component {
     return findByIdInArray(players, idPlayer);
   };
 
-  getTypeElement = (type, minute) => {
+  getTypeElement = (type, minute, match) => {
     const imageEventsTypes = [30, 31, 50, 61, 62, 63, 64, 65]; // TODO: 🚧 Search for all
     const hasImageEventType = imageEventsTypes.find(el => el === type);
     const isMatchStarted = type === 1;
+    const isShootout = type === 80;
 
     if (minute !== undefined || isMatchStarted)
       return (
-        <span className={'EventType Type' + type}>{`${Localize('MatchEventType' + type)} (${minute}')`}</span>
+        <span className={'EventType Type' + type}>{`${Localize('MatchEventType' + type)} ${
+          isShootout &&
+          `(${match.homeScore - match.visibleHomeScore}-${match.visitorScore - match.visibleVisitorScore}) `
+        } (${minute}')`}</span>
       );
 
     if (hasImageEventType) return <span className={'PlayerStat EventType Type' + type}></span>;
@@ -124,7 +128,7 @@ class EventList extends Component {
                         {/* <span className="Minute">{ev.matchMinute}'</span> */}
                         {/* <span className='Hour'> {getFormattedTime(ev.timeStamp)}</span> */}
                         {/* </div> */}
-                        {this.getTypeElement(ev.type, ev.matchMinute)}
+                        {this.getTypeElement(ev.type, ev.matchMinute, match)}
                       </div>
                     ) : (
                       <Fragment>
