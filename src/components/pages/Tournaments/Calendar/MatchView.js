@@ -6,7 +6,6 @@ import Loc, { Localize } from '../../../common/Locale/Loc';
 
 const matchHasResult = match => {
   const s = match.status;
-  console.log(match.status);
   // eslint-disable-next-line eqeqeq
   return s == 3 || s == 4 || s == 5;
 };

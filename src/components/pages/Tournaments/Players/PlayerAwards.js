@@ -5,7 +5,7 @@ import { awardTypes } from '../../../helpers/Awards';
 // const awardTypes = ['Award_DreamTeam', 'Award_MVP', 'Award_MaxScorer'];
 
 export default props => {
-  const { player, currentIdTeam, currentIdTournament } = props;
+  const { player, currentIdTeam, currentIdTournament, history } = props;
   const { awards } = player;
   const hasAwards = awards && awards.length > 0;
   const relevantAwards = awards.filter(
@@ -27,7 +27,11 @@ export default props => {
 
             return (
               <li className={'Award ' + typeKey} key={i}>
-                <p className="AwardTitle">
+                <p
+                  className="AwardTitle"
+                  style={{ cursor: 'pointer' }}
+                  onClick={() => history.push(`/awards/${award.id}`)}
+                >
                   <Loc>{typeKey}</Loc>
                 </p>
                 <p className="AwardDetail">{award.desc}</p>

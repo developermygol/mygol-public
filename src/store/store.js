@@ -7,6 +7,7 @@ import tournamentsReducer from './reducers/tournamentsReducer';
 import sponsorsReducer from './reducers/sponsorsReducer';
 import tournamnetModesReducer from './reducers/tournamentModesReducer';
 import themeReducer from './reducers/theme';
+import awardsReducer from './reducers/awardsReducer';
 
 const rootReducer = combineReducers({
   organizations: organizationReducer,
@@ -15,6 +16,7 @@ const rootReducer = combineReducers({
   tournaments: tournamentsReducer,
   sponsors: sponsorsReducer,
   theme: themeReducer,
+  awards: awardsReducer,
 });
 
 const composeEnhancers =

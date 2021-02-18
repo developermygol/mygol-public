@@ -1043,6 +1043,43 @@ footer .Wrapper {
   background-image: url('public1/awards/dreamteampoints.png');
 }
 
+/*Large*/
+.LargeAward {
+  margin-top: 30px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: top center;
+  text-align: center;
+}
+
+.LargeAward.Award_DreamTeam {
+  background-image: url('public1/largeawards/dreamteam.png');
+}
+
+.LargeAward.Award_MVP {
+  background-image: url('public1/largeawards/mvp.png');
+}
+
+.LargeAward.Award_MaxScorer,
+.LargeAward.AwardType10 {
+  background-image: url('public1/largeawards/maxscorer.png');
+}
+
+.LargeAward.Award_MaxGoalKeeper,
+.LargeAward.AwardType20 {
+  background-image: url('public1/largeawards/GoalKeeper.png');
+}
+
+.LargeAward.Award_MaxAssistances,
+.LargeAward.AwardType30 {
+  background-image: url('public1/largeawards/assistances.png');
+}
+
+.LargeAward.Award_MaxMVPs,
+.LargeAward.AwardType40 {
+  background-image: url('public1/largeawards/dreamteampoints.png');
+}
+
 .PlayerStats {
   clear: both;
 }
@@ -2481,4 +2518,60 @@ footer .Website {
 .MatchStatus .Penalties span {
   font-weight: 600;
   font-size: 1.4em;
+}
+
+/* Award Detail */
+.LargeAward .PlayerTeam {
+  padding-top: 00px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.LargeAward .Tournament {
+  padding-top: 80px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 6px 6px 20px #333;
+}
+
+.LargeAward .PlayerName {
+  padding-top: 00px;
+  padding-bottom: 20px;
+  line-height: 1.2em;
+  font-size: 6rem;
+  font-weight: 900;
+  color: white;
+  text-transform: uppercase;
+  text-shadow: 6px 6px 20px #333;
+}
+
+.LargeAward .AwardTitle {
+  padding-top: 0px;
+  font-size: 3rem;
+  text-shadow: 6px 6px 20px #333;
+}
+
+.AwardDetail {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.LargeAward .AwardDate {
+  color: white;
+}
+
+.TeamBadge,
+.PlayerBadge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.PlayerBadge .PlayerAvatar.Medium {
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 50%;
 }

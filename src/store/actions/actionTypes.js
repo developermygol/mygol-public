@@ -15,6 +15,9 @@ const types = {
   tournamentActiveDreamTeamRankingsLoad: '[Tournaments] Load active trournament dreamteam rankings',
   tournamentSetSponsorData: '[Tournaments] Set tournament sponsor data',
 
+  //Awards
+  awardLoad: '[Awards] Load award by id',
+
   //Sponsors
   sponsorsOrganizationLoad: '[Sponsor] Load organization sponsors',
   sponsorsTournamentLoad: '[Sponsor] Load tournament sponsors',

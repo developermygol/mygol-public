@@ -58,7 +58,12 @@ class PlayerIndex extends Component {
 
             <PlayerData player={player} />
             <PlayerSocial player={player} />
-            <PlayerAwards player={player} currentIdTeam={idTeam} currentIdTournament={idTournament} />
+            <PlayerAwards
+              player={player}
+              currentIdTeam={idTeam}
+              currentIdTournament={idTournament}
+              history={this.props.history}
+            />
             <PlayerStats player={player} />
             <PlayerSanctions
               sanctions={player.sanctions}

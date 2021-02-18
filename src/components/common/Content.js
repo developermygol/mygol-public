@@ -5,6 +5,7 @@ import Player from '../pages/Players/Details';
 import ContentDetails from '../pages/Content/ContentDetails';
 import ContentIndex from '../pages/Content/ContentIndex';
 import PrivacyScreen from '../pages/Privacy/PrivacyScreen';
+import AwardScreen from '../pages/Award/AwardScreen';
 
 class Content extends Component {
   render = () => {
@@ -16,6 +17,7 @@ class Content extends Component {
             <Route path="/content/section/:idCategory" component={ContentIndex} />
             <Route path="/content/:idArticle" component={ContentDetails} />
             <Route path="/privacy" exact component={PrivacyScreen} />
+            <Route path="/awards/:id" exact component={AwardScreen} />
 
             {routes.map(item => (
               <Route
