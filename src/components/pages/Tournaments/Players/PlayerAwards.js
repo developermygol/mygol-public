@@ -34,7 +34,7 @@ export default props => {
                 >
                   <Loc>{typeKey}</Loc>
                 </p>
-                <p className="AwardDetail">{award.desc}</p>
+                <p className="AwardMatch">{award.text1}</p>
                 {/* <p className="AwardDate"><LongDate date={award.date} /></p> */}
                 <p className="AwardDate">{award.day && award.day.name}</p>
               </li>

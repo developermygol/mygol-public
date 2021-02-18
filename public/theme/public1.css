@@ -986,9 +986,9 @@ footer .Wrapper {
 
 .AwardList {
   display: flex;
-  overflow-x: auto;
-  overflow-y: hidden;
   padding-top: 20px;
+  overflow-x: auto;
+  flex-wrap: wrap;
 }
 
 .AwardTitle {
@@ -999,6 +999,11 @@ footer .Wrapper {
 .AwardDetail {
   font-weight: 400;
   text-transform: uppercase;
+}
+
+.AwardMatch {
+  display: block;
+  font-size: 0.6rem;
 }
 
 .AwardDate {
@@ -1019,7 +1024,8 @@ footer .Wrapper {
   background-image: url('public1/awards/dreamteam.png');
 }
 
-.Award_MVP {
+.Award_MVP,
+.AwardType1 {
   background-image: url('public1/awards/mvp.png');
 }
 
@@ -1056,7 +1062,8 @@ footer .Wrapper {
   background-image: url('public1/largeawards/dreamteam.png');
 }
 
-.LargeAward.Award_MVP {
+.LargeAward.Award_MVP,
+.LargeAward.AwardType1 {
   background-image: url('public1/largeawards/mvp.png');
 }
 

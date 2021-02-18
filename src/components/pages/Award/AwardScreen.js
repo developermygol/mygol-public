@@ -17,7 +17,7 @@ const AwardScreen = () => {
 
   if (!activeAward) return null;
 
-  const { type, player, day, tournament, team } = activeAward;
+  const { type, text1, player, day, tournament, team } = activeAward;
 
   return (
     <div className={`LargeAward AwardType${type}`}>
@@ -30,7 +30,7 @@ const AwardScreen = () => {
         <p className="AwardTitle Color3">
           <Loc>{`AwardType${type}`}</Loc>
         </p>
-        <p className="AwardDetail Color3">{/* 🚧 */}</p>
+        <p className="AwardDetail Color3">{text1}</p>
         <p className="AwardDate">{day.name}</p>
       </div>
       <div className="PlayerTeam">
