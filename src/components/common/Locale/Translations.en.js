@@ -508,6 +508,10 @@ export default {
     "SanctionStatus4": "Done",
 
 
+    // Paypal
+    "Paypal.Info.Text": "You ara about to make a peayment to {0} off",
+    "Paypal.Payment.Text": "Choose payment method:",
+
     // Exceptions
     "Error.PlayerData": "Could not retrieve data for this player",
     "Error.TeamData": "Could not retrieve data for this team",

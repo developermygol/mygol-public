@@ -587,7 +587,9 @@ export default {
     "SanctionStatus3": "En trámite - alegaciones abiertas",
     "SanctionStatus4": "Cumplida",
 
-
+    // Paypal
+    "Paypal.Info.Text": "Vas a realizar un pago a {0} por valor de",
+    "Paypal.Payment.Text": "Elige el método de pago:",
 
     // Exceptions
     "Error.PlayerData": "No se han podido cargar los datos del jugador",

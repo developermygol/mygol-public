@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { Route, BrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
 import { Provider as ProviderMobx } from 'mobx-react';
 import { ThemeProvider } from 'styled-components';
 
@@ -14,6 +14,8 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import GlobalStyles from './GlobalStyles';
 import { useSelector } from 'react-redux';
+import PaypalScreen from './components/pages/Paypal/PaypalScreen';
+import PaypalSuccessScreen from './components/pages/Paypal/PaypalSuccessScreen';
 
 const App = () => {
   const themeCssFile =
@@ -40,7 +42,11 @@ const App = () => {
           {/* <BrowserRouter basename="/my-app"> */}
           <BrowserRouter>
             <ScrollToTop>
-              <Route component={Root} />
+              <Switch>
+                <Route path="/paypal/:amount" exact component={PaypalScreen} />
+                <Route path="/paypal/success/:paymentId" exact component={PaypalSuccessScreen} />
+                <Route component={Root} />
+              </Switch>
             </ScrollToTop>
           </BrowserRouter>
         </Fragment>

@@ -1,0 +1,26 @@
+.PaypalScreen {
+  padding: 1rem;
+}
+
+.PaypalScreen h1,
+.PaypalScreen h4 {
+  margin: 1rem 0 !important;
+}
+
+.PaypalScreen span {
+  font-size: 1.25rem;
+  font-weight: bold !important;
+}
+
+.PaypalScreen .Details {
+  text-align: center;
+}
+
+.PaypalScreen .Logo {
+  background-size: 70px;
+  background-repeat: no-repeat;
+  height: 70px;
+  width: 70px;
+  min-width: 70px;
+  margin: 0 auto;
+}
