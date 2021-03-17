@@ -24,6 +24,7 @@ export const startLoadTournamentDreamTeamRankings = tournamentId => {
         const rankingGroupByFieldPosition =
           data.length > 0
             ? data.reduce((accumulator, currentValue, currentIndex) => {
+                console.log(accumulator, currentValue, currentIndex);
                 if (currentIndex === 1) {
                   accumulator = { [accumulator.fieldPosition]: [accumulator] };
                   if (!accumulator[currentValue.fieldPosition]) {
@@ -45,7 +46,7 @@ export const startLoadTournamentDreamTeamRankings = tournamentId => {
                   }
                 }
                 return accumulator;
-              })
+              }, {})
             : null;
 
         dispatch(setActiveTournamentDreamTeamRanking(rankingGroupByFieldPosition));

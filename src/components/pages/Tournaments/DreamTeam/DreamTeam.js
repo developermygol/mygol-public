@@ -37,7 +37,7 @@ const DreamTeam = () => {
   const { numPlayers } = tournamentModes.find(mode => mode.id === activeTournament.idTournamentMode);
   const defaultTactic = tactics.filter(t => t.numPlayers === numPlayers)[0];
 
-  if (!dreamTeamPlayers || activeTournamentDreamTeamRanking.length > 0) return null;
+  if (!dreamTeamPlayers || Object.keys(activeTournamentDreamTeamRanking).length === 0) return null;
 
   return (
     <div className="DreamTeamWrapper">
